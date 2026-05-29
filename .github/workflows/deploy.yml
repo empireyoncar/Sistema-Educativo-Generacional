@@ -22,4 +22,4 @@ jobs:
     - name: Actualizar código en el servidor
       run: |
         ssh -p 2222 empire@empireyoncar.duckdns.org "
-          cd ~/Documentos/github/red-social-productiva-empireyoncar && git pull"
+          cd ~/Documentos/github/Sistema-Educativo-Generacional && git pull"
