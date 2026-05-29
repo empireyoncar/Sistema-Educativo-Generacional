@@ -1,24 +1,25 @@
-name: Deploy automatico al servidor
+name: Deploy automático al servidor
 
 on:
   push:
-    branches: ["main"]
+    branches: [ "main" ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Configurar SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" | sed 's/\\n/\n/g' > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -p "${{ secrets.SSH_PORT }}" -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
+    - name: Descargar el repositorio
+      uses: actions/checkout@v3
 
-      - name: Hacer pull en el servidor
-        run: |
-          ssh -p "${{ secrets.SSH_PORT }}" "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}" "
-            cd '${{ secrets.PROJECT_PATH }}'
-            git pull origin main
-          "
+    - name: Configurar SSH
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" | sed 's/\\n/\n/g' > ~/.ssh/id_ed25519
+        chmod 600 ~/.ssh/id_ed25519
+        ssh-keyscan -p 2222 -H empireyoncar.duckdns.org >> ~/.ssh/known_hosts
+
+    - name: Actualizar código en el servidor
+      run: |
+        ssh -p 2222 empire@empireyoncar.duckdns.org "
+          cd ~/Documentos/github/red-social-productiva-empireyoncar && git pull"
