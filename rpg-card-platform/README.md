@@ -17,8 +17,9 @@ docker compose up --build
 URLs:
 
 - Frontend: `http://localhost:3005/empireyoncarsistemaeducativo/`
-- Backend API: `http://localhost:8000`
-- Docs API: `http://localhost:8000/docs`
+- Constructor RPG: `http://localhost:3005/empireyoncarsistemaeducativo/constructor-rpg/`
+- Backend API: `http://localhost:6801`
+- Docs API: `http://localhost:6801/docs`
 - PostgreSQL externo: `localhost:6800`
 
 ## Admin inicial
@@ -50,3 +51,5 @@ Puedes cambiar la URL con:
 ```txt
 VITE_CARD_BUILDER_URL=/empireyoncarsistemaeducativo/constructor-rpg/
 ```
+
+El `docker-compose.yml` tambien levanta el servicio `card-builder`, basado en `../gamer-card-project`.

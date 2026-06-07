@@ -19,7 +19,7 @@ services:
       DATABASE_URL: postgresql://rpg_user:rpg_password@db:6800/rpg_cards
       JWT_SECRET: change-this-secret-in-production
     ports:
-      - "8000:8000"
+      - "6801:6801"
     depends_on:
       - db
 
@@ -30,9 +30,20 @@ services:
       VITE_API_URL: /empireyoncarsistemaeducativo/api
       VITE_CARD_BUILDER_URL: /empireyoncarsistemaeducativo/constructor-rpg/
     ports:
-      - "3005:5173"
+      - "3005:3005"
     depends_on:
       - backend
+      - card-builder
+
+  card-builder:
+    build: ../gamer-card-project
+    restart: unless-stopped
+    environment:
+      VITE_BASE_PATH: /empireyoncarsistemaeducativo/constructor-rpg/
+      RPG_CARD_ASSET_ROOT: /home/empire/Imágenes/Constructor de tarjetas RPG
+      ADMIN_TOKEN: empire-admin
+    expose:
+      - "3006"
 
 volumes:
   postgres_data:

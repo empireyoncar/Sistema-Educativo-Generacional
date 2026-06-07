@@ -6,15 +6,19 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: "0.0.0.0",
-    port: 5173,
+    port: 3005,
     proxy: {
       "/empireyoncarsistemaeducativo/api": {
-        target: "http://backend:8000",
+        target: "http://backend:6801",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/empireyoncarsistemaeducativo/, ""),
       },
+      "/empireyoncarsistemaeducativo/constructor-rpg": {
+        target: "http://card-builder:3006",
+        changeOrigin: true,
+      },
       "/api": {
-        target: "http://backend:8000",
+        target: "http://backend:6801",
         changeOrigin: true,
       },
     },
