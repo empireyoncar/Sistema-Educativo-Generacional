@@ -1,0 +1,118 @@
+@layer components {
+  .stat-card-animated {
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+    animation: statCascade 0.55s ease-out var(--stat-delay) both;
+  }
+
+  .stat-card-animated::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    background: radial-gradient(circle at 82% 22%, rgba(255, 236, 170, 0.38), transparent 34%);
+    animation: statFinishGlow 1.35s ease-out calc(var(--stat-delay) + 1.05s) both;
+  }
+
+  .stat-count {
+    color: #fff7d6;
+    text-shadow: 0 0 8px rgba(246, 211, 101, 0.62), 0 0 18px rgba(246, 211, 101, 0.28);
+  }
+
+  .stat-label-small {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: clamp(9px, 0.85vw, 11px);
+    letter-spacing: 0.04em;
+  }
+
+  .stat-icon-frame {
+    display: inline-flex;
+    width: 24px;
+    height: 24px;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    border: 1px solid rgba(246, 211, 101, 0.45);
+    background:
+      radial-gradient(circle at 50% 20%, rgba(255, 236, 170, 0.22), transparent 48%),
+      rgba(0, 0, 0, 0.42);
+    box-shadow: inset 0 0 8px rgba(246, 211, 101, 0.1), 0 0 10px rgba(246, 211, 101, 0.18);
+  }
+
+  .stat-icon {
+    width: 18px;
+    height: 18px;
+    color: #ffe6a3;
+    filter: drop-shadow(0 0 6px rgba(246, 211, 101, 0.72));
+    stroke-width: 2.4;
+  }
+
+  .stat-value-small {
+    font-size: clamp(13px, 1.15vw, 15px);
+  }
+
+  .stat-power-bar {
+    width: 72%;
+    height: 3px;
+    margin-top: 5px;
+    overflow: hidden;
+    border-radius: 999px;
+    border: 1px solid rgba(246, 211, 101, 0.28);
+    background: rgba(0, 0, 0, 0.46);
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.5);
+  }
+
+  .stat-power-bar span {
+    display: block;
+    width: var(--stat-percent);
+    height: 100%;
+    border-radius: inherit;
+    transform: scaleX(0);
+    transform-origin: left center;
+    background: linear-gradient(90deg, #7c2d12, #eab308, #fff4bd);
+    box-shadow: 0 0 10px rgba(246, 211, 101, 0.72);
+    animation: statBarFill 1.05s cubic-bezier(0.2, 0.9, 0.2, 1) calc(var(--stat-delay) + 0.18s) both,
+      statBarGlow 2.5s ease-in-out calc(var(--stat-delay) + 1.2s) infinite;
+  }
+
+  @keyframes statCascade {
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes statBarFill {
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  @keyframes statBarGlow {
+    0%, 100% {
+      filter: brightness(0.95);
+    }
+    50% {
+      filter: brightness(1.3);
+    }
+  }
+
+  @keyframes statFinishGlow {
+    0% {
+      opacity: 0;
+    }
+    35% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}

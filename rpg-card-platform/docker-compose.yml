@@ -1,0 +1,38 @@
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    command: ["postgres", "-p", "6800"]
+    environment:
+      POSTGRES_USER: rpg_user
+      POSTGRES_PASSWORD: rpg_password
+      POSTGRES_DB: rpg_cards
+    ports:
+      - "6800:6800"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://rpg_user:rpg_password@db:6800/rpg_cards
+      JWT_SECRET: change-this-secret-in-production
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  frontend:
+    build: ./frontend
+    restart: unless-stopped
+    environment:
+      VITE_API_URL: /empireyoncarsistemaeducativo/api
+      VITE_CARD_BUILDER_URL: http://localhost:3000
+    ports:
+      - "3005:5173"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:

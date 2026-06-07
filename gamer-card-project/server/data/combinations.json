@@ -1,0 +1,1094 @@
+[
+  {
+    "id": "98a3eb49-eb3a-49e6-bc7a-01cc91a390bf",
+    "name": "Holy Paladin Cerezo",
+    "card": {
+      "name": "",
+      "genre": "Un paladin bendecido por cerezos misticos cuya luz purifica toda oscuridad.",
+      "id": "",
+      "rank": "Bronze",
+      "rarity": "",
+      "country": "",
+      "xp": "0",
+      "level": "0",
+      "strength": "0",
+      "agility": "0",
+      "vitality": "0",
+      "intelligence": "0",
+      "wisdom": "0",
+      "charisma": "0",
+      "attribute": "",
+      "skills": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "assets": {
+      "background": "/local-assets/backgrounds/file/bg-mystic-sakura-1080x1920.png",
+      "character": "blob:http://localhost:3000/428c1113-d483-4773-a9ce-96184dd47ece",
+      "frame": "blob:http://localhost:3000/6ac89841-eaac-4296-a31a-9ebcae2bc32c",
+      "glow": "/local-assets/glows/file/vfx_20_mystic_sakura_base.png",
+      "attributeIcon": "/local-assets/attributes/file/attr_02_light.png",
+      "rankIcon": "/local-assets/ranks/file/rank_01_bronze.png"
+    },
+    "assetNames": {
+      "background": "bg-mystic-sakura-1080x1920.png",
+      "character": "asset_20_holy_paladin_transparent.png",
+      "frame": "marco_20_mystic_sakura.png",
+      "glow": "vfx_20_mystic_sakura_base.png",
+      "attributeIcon": "attr_02_light.png",
+      "rankIcon": "rank_01_bronze.png"
+    },
+    "modelText": {
+      "name": "Holy Paladin",
+      "tagline": "Empireyoncar Card"
+    },
+    "selectedModelId": "dragon-slayer",
+    "templateId": "inferno",
+    "textStyleId": "legendary",
+    "createdAt": "2026-06-06T10:41:39.783Z",
+    "updatedAt": "2026-06-06T10:41:39.783Z"
+  },
+  {
+    "id": "409b59a4-d47c-47ad-9144-f118ddc5e9d3",
+    "name": "Holy Paladin",
+    "card": {
+      "name": "",
+      "genre": "Un paladin bendecido por cerezos misticos cuya luz purifica toda oscuridad.",
+      "id": "",
+      "rank": "Bronze",
+      "rarity": "",
+      "country": "",
+      "xp": "0",
+      "level": "0",
+      "strength": "0",
+      "agility": "0",
+      "vitality": "0",
+      "intelligence": "0",
+      "wisdom": "0",
+      "charisma": "0",
+      "attribute": "",
+      "skills": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "assets": {
+      "background": "/local-assets/backgrounds/file/bg-mystic-sakura-1080x1920.png",
+      "character": "/local-assets/characters/file/character-holy-paladin.png",
+      "frame": "blob:http://localhost:3000/6ac89841-eaac-4296-a31a-9ebcae2bc32c",
+      "glow": "/local-assets/glows/file/vfx_20_mystic_sakura_base.png",
+      "attributeIcon": "/local-assets/attributes/file/attr_02_light.png",
+      "rankIcon": "/local-assets/ranks/file/rank_01_bronze.png"
+    },
+    "assetNames": {
+      "background": "bg-mystic-sakura-1080x1920.png",
+      "character": "character-holy-paladin.png",
+      "frame": "marco_20_mystic_sakura.png",
+      "glow": "vfx_20_mystic_sakura_base.png",
+      "attributeIcon": "attr_02_light.png",
+      "rankIcon": "rank_01_bronze.png"
+    },
+    "modelText": {
+      "name": "Holy Paladin",
+      "tagline": "Empireyoncar Card"
+    },
+    "selectedModelId": "dragon-slayer",
+    "templateId": "inferno",
+    "textStyleId": "legendary",
+    "createdAt": "2026-06-06T10:30:23.889Z",
+    "updatedAt": "2026-06-06T10:30:23.889Z"
+  },
+  {
+    "id": "8e5db143-7eff-4ba6-a2a7-e3b8adada86b",
+    "name": "Viking Conqueror",
+    "card": {
+      "name": "",
+      "genre": "Un conquistador indomable que desafia imperios con espiritu feroz.",
+      "id": "",
+      "rank": "Bronze",
+      "rarity": "",
+      "country": "",
+      "xp": "0",
+      "level": "0",
+      "strength": "0",
+      "agility": "0",
+      "vitality": "0",
+      "intelligence": "0",
+      "wisdom": "0",
+      "charisma": "0",
+      "attribute": "",
+      "skills": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "assets": {
+      "background": "/local-assets/backgrounds/file/bg-royal-empire-1080x1920.png",
+      "character": "/local-assets/characters/file/18_viking_conqueror.png",
+      "frame": "blob:http://localhost:3000/47065fa2-d125-4b99-b9a1-f8b9f81ce0a5",
+      "glow": "/local-assets/glows/file/vfx_19_royal_empire_base.png",
+      "attributeIcon": "/local-assets/attributes/file/attr_02_light.png",
+      "rankIcon": "/local-assets/ranks/file/rank_01_bronze.png"
+    },
+    "assetNames": {
+      "background": "bg-royal-empire-1080x1920.png",
+      "character": "18_viking_conqueror.png",
+      "frame": "marco_19_royal_empire.png",
+      "glow": "vfx_19_royal_empire_base.png",
+      "attributeIcon": "attr_02_light.png",
+      "rankIcon": "rank_01_bronze.png"
+    },
+    "modelText": {
+      "name": "Viking Conqueror",
+      "tagline": "Empireyoncar Card"
+    },
+    "selectedModelId": "dragon-slayer",
+    "templateId": "inferno",
+    "textStyleId": "legendary",
+    "createdAt": "2026-06-06T10:26:47.417Z",
+    "updatedAt": "2026-06-06T10:26:47.417Z"
+  },
+  {
+    "id": "5f5eb918-b7a8-469a-9349-fab4345cd0bc",
+    "name": "Dark Reaper",
+    "card": {
+      "name": "",
+      "genre": "Un segador nacido del reino demoniaco que trae silencio donde pisa.",
+      "id": "",
+      "rank": "Bronze",
+      "rarity": "",
+      "country": "",
+      "xp": "0",
+      "level": "0",
+      "strength": "0",
+      "agility": "0",
+      "vitality": "0",
+      "intelligence": "0",
+      "wisdom": "0",
+      "charisma": "0",
+      "attribute": "",
+      "skills": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "assets": {
+      "background": "/local-assets/backgrounds/file/bg-demonic-realm-1080x1920.png",
+      "character": "/local-assets/characters/file/16_dark_reaper.png",
+      "frame": "blob:http://localhost:3000/589c1ab0-450c-4595-8f00-f99e48c5389b",
+      "glow": "/local-assets/glows/file/vfx_15_demonic_realm_base.png",
+      "attributeIcon": "/local-assets/attributes/file/attr_02_light.png",
+      "rankIcon": "/local-assets/ranks/file/rank_01_bronze.png"
+    },
+    "assetNames": {
+      "background": "bg-demonic-realm-1080x1920.png",
+      "character": "16_dark_reaper.png",
+      "frame": "marco_15_demonic_realm.png",
+      "glow": "vfx_15_demonic_realm_base.png",
+      "attributeIcon": "attr_02_light.png",
+      "rankIcon": "rank_01_bronze.png"
+    },
+    "modelText": {
+      "name": "Dark Reaper",
+      "tagline": "Empireyoncar Card"
+    },
+    "selectedModelId": "dragon-slayer",
+    "templateId": "inferno",
+    "textStyleId": "legendary",
+    "createdAt": "2026-06-06T10:24:48.275Z",
+    "updatedAt": "2026-06-06T10:24:48.275Z"
+  },
+  {
+    "id": "4834829d-a064-4cb8-ad10-a46497abf073",
+    "name": "Titan Gladiator",
+    "card": {
+      "name": "",
+      "genre": "Un gladiador colosal formado entre cristales ancestrales que resuenan con poder.",
+      "id": "",
+      "rank": "Bronze",
+      "rarity": "",
+      "country": "",
+      "xp": "0",
+      "level": "0",
+      "strength": "0",
+      "agility": "0",
+      "vitality": "0",
+      "intelligence": "0",
+      "wisdom": "0",
+      "charisma": "0",
+      "attribute": "",
+      "skills": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "assets": {
+      "background": "/local-assets/backgrounds/file/bg-crystal-caverns-1080x1920.png",
+      "character": "/local-assets/characters/file/20_titan_gladiator.png",
+      "frame": "blob:http://localhost:3000/476d44b6-96af-47f5-b2d4-98c87fd404e9",
+      "glow": "/local-assets/glows/file/vfx_18_crystal_caverns_base.png",
+      "attributeIcon": "/local-assets/attributes/file/attr_02_light.png",
+      "rankIcon": "/local-assets/ranks/file/rank_01_bronze.png"
+    },
+    "assetNames": {
+      "background": "bg-crystal-caverns-1080x1920.png",
+      "character": "20_titan_gladiator.png",
+      "frame": "marco_18_crystal_caverns.png",
+      "glow": "vfx_18_crystal_caverns_base.png",
+      "attributeIcon": "attr_02_light.png",
+      "rankIcon": "rank_01_bronze.png"
+    },
+    "modelText": {
+      "name": "Titan Gladiator",
+      "tagline": "Empireyoncar Card"
+    },
+    "selectedModelId": "dragon-slayer",
+    "templateId": "inferno",
+    "textStyleId": "legendary",
+    "createdAt": "2026-06-06T10:22:43.932Z",
+    "updatedAt": "2026-06-06T10:22:43.932Z"
+  },
+  {
+    "id": "05a62d3a-4101-49d5-9714-44bee3ccb610",
+    "name": "Necromancer",
+    "card": {
+      "name": "",
+      "genre": "Un invocador de almas que domina el poder oculto entre tumbas olvidadas.",
+      "id": "",
+      "rank": "Bronze",
+      "rarity": "",
+      "country": "",
+      "xp": "0",
+      "level": "0",
+      "strength": "0",
+      "agility": "0",
+      "vitality": "0",
+      "intelligence": "0",
+      "wisdom": "0",
+      "charisma": "0",
+      "attribute": "",
+      "skills": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "assets": {
+      "background": "/local-assets/backgrounds/file/bg-haunted-cemetery-1080x1920.png",
+      "character": "/local-assets/characters/file/char-necromancer.png",
+      "frame": "blob:http://localhost:3000/e72563d1-d13b-46d3-884c-10b9e8d69717",
+      "glow": "/local-assets/glows/file/vfx_17_haunted_cemetery_base.png",
+      "attributeIcon": "/local-assets/attributes/file/attr_02_light.png",
+      "rankIcon": "/local-assets/ranks/file/rank_01_bronze.png"
+    },
+    "assetNames": {
+      "background": "bg-haunted-cemetery-1080x1920.png",
+      "character": "char-necromancer.png",
+      "frame": "marco_17_haunted_cemetery.png",
+      "glow": "vfx_17_haunted_cemetery_base.png",
+      "attributeIcon": "attr_02_light.png",
+      "rankIcon": "rank_01_bronze.png"
+    },
+    "modelText": {
+      "name": "Necromancer",
+      "tagline": "Empireyoncar Card"
+    },
+    "selectedModelId": "dragon-slayer",
+    "templateId": "inferno",
+    "textStyleId": "legendary",
+    "createdAt": "2026-06-06T10:21:30.217Z",
+    "updatedAt": "2026-06-06T10:21:30.217Z"
+  },
+  {
+    "id": "062eb9e4-dcc2-4f7a-8c74-b8bd356525d3",
+    "name": "Battle Monk",
+    "card": {
+      "name": "",
+      "genre": "Un monje guerrero de las profundidades cuya fuerza fluye como las mareas.",
+      "id": "",
+      "rank": "Bronze",
+      "rarity": "",
+      "country": "",
+      "xp": "0",
+      "level": "0",
+      "strength": "0",
+      "agility": "0",
+      "vitality": "0",
+      "intelligence": "0",
+      "wisdom": "0",
+      "charisma": "0",
+      "attribute": "",
+      "skills": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "assets": {
+      "background": "/local-assets/backgrounds/file/bg-oceanic-atlantis-1080x1920.png",
+      "character": "/local-assets/characters/file/12_battle_monk.png",
+      "frame": "/local-assets/frames/file/border_16_oceanic_atlantis.png",
+      "glow": "/local-assets/glows/file/vfx_16_oceanic_atlantis_base.png",
+      "attributeIcon": "/local-assets/attributes/file/attr_02_light.png",
+      "rankIcon": "/local-assets/ranks/file/rank_01_bronze.png"
+    },
+    "assetNames": {
+      "background": "bg-oceanic-atlantis-1080x1920.png",
+      "character": "12_battle_monk.png",
+      "frame": "border_16_oceanic_atlantis.png",
+      "glow": "vfx_16_oceanic_atlantis_base.png",
+      "attributeIcon": "attr_02_light.png",
+      "rankIcon": "rank_01_bronze.png"
+    },
+    "modelText": {
+      "name": "Battle Monk",
+      "tagline": "Empireyoncar Card"
+    },
+    "selectedModelId": "dragon-slayer",
+    "templateId": "inferno",
+    "textStyleId": "legendary",
+    "createdAt": "2026-06-06T10:20:52.264Z",
+    "updatedAt": "2026-06-06T10:20:52.264Z"
+  },
+  {
+    "id": "660d40d4-9d7f-454f-972f-0e27d55930f4",
+    "name": "Dragon Slayer",
+    "card": {
+      "name": "",
+      "genre": "Un cazador marcado por la sangre de dragon que enfrenta criaturas legendarias.",
+      "id": "",
+      "rank": "Bronze",
+      "rarity": "",
+      "country": "",
+      "xp": "0",
+      "level": "0",
+      "strength": "0",
+      "agility": "0",
+      "vitality": "0",
+      "intelligence": "0",
+      "wisdom": "0",
+      "charisma": "0",
+      "attribute": "",
+      "skills": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "assets": {
+      "background": "/local-assets/backgrounds/file/bg-dragon-temple-1080x1920.png",
+      "character": "/local-assets/characters/file/char-dragon-slayer.png",
+      "frame": "/local-assets/frames/file/marco_14_dragon_temple.png",
+      "glow": "/local-assets/glows/file/vfx_14_dragon_temple_base.png",
+      "attributeIcon": "/local-assets/attributes/file/attr_02_light.png",
+      "rankIcon": "/local-assets/ranks/file/rank_01_bronze.png"
+    },
+    "assetNames": {
+      "background": "bg-dragon-temple-1080x1920.png",
+      "character": "char-dragon-slayer.png",
+      "frame": "marco_14_dragon_temple.png",
+      "glow": "vfx_14_dragon_temple_base.png",
+      "attributeIcon": "attr_02_light.png",
+      "rankIcon": "rank_01_bronze.png"
+    },
+    "modelText": {
+      "name": " Dragon Slayer",
+      "tagline": "Empireyoncar"
+    },
+    "selectedModelId": "dragon-slayer",
+    "templateId": "inferno",
+    "textStyleId": "legendary",
+    "createdAt": "2026-06-05T21:35:37.467Z",
+    "updatedAt": "2026-06-05T21:35:37.467Z"
+  },
+  {
+    "id": "7c85f7e3-241b-4e15-931c-03632d50c19d",
+    "name": "Samurai Ronin",
+    "card": {
+      "name": "",
+      "genre": "Un ronin errante que busca redencion entre dunas antiguas y silencios eternos.",
+      "id": "",
+      "rank": "Bronze",
+      "rarity": "",
+      "country": "",
+      "xp": "0",
+      "level": "0",
+      "strength": "0",
+      "agility": "0",
+      "vitality": "0",
+      "intelligence": "0",
+      "wisdom": "0",
+      "charisma": "0",
+      "attribute": "",
+      "skills": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "assets": {
+      "background": "/local-assets/backgrounds/file/bg-ancient-desert-1080x1920.png",
+      "character": "/local-assets/characters/file/char-samurai-ronin.png",
+      "frame": "/local-assets/frames/file/marco_13_ancient_desert.png",
+      "glow": "/local-assets/glows/file/vfx_13_ancient_desert_base.png",
+      "attributeIcon": "/local-assets/attributes/file/attr_02_light.png",
+      "rankIcon": "/local-assets/ranks/file/rank_01_bronze.png"
+    },
+    "assetNames": {
+      "background": "bg-ancient-desert-1080x1920.png",
+      "character": "char-samurai-ronin.png",
+      "frame": "marco_13_ancient_desert.png",
+      "glow": "vfx_13_ancient_desert_base.png",
+      "attributeIcon": "attr_02_light.png",
+      "rankIcon": "rank_01_bronze.png"
+    },
+    "modelText": {
+      "name": "Samurai Ronin",
+      "tagline": "Empireyoncar"
+    },
+    "selectedModelId": "dragon-slayer",
+    "templateId": "inferno",
+    "textStyleId": "legendary",
+    "createdAt": "2026-06-05T21:31:21.452Z",
+    "updatedAt": "2026-06-05T21:31:21.452Z"
+  },
+  {
+    "id": "42032d09-b353-4e40-8ccf-28fb9ab223a7",
+    "name": "Elemental Sorcerer",
+    "card": {
+      "name": "",
+      "genre": "Un hechicero que invoca tormentas capaces de desgarrar cielo y tierra.",
+      "id": "",
+      "rank": "Bronze",
+      "rarity": "",
+      "country": "",
+      "xp": "0",
+      "level": "0",
+      "strength": "0",
+      "agility": "0",
+      "vitality": "0",
+      "intelligence": "0",
+      "wisdom": "0",
+      "charisma": "0",
+      "attribute": "",
+      "skills": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "assets": {
+      "background": "/local-assets/backgrounds/file/bg-thunder-storm-1080x1920.png",
+      "character": "/local-assets/characters/file/15_elemental_sorcerer.png",
+      "frame": "/local-assets/frames/file/border_12_thunder_storm.png",
+      "glow": "/local-assets/glows/file/vfx_12_thunder_storm_base.png",
+      "attributeIcon": "/local-assets/attributes/file/attr_02_light.png",
+      "rankIcon": "/local-assets/ranks/file/rank_01_bronze.png"
+    },
+    "assetNames": {
+      "background": "bg-thunder-storm-1080x1920.png",
+      "character": "15_elemental_sorcerer.png",
+      "frame": "border_12_thunder_storm.png",
+      "glow": "vfx_12_thunder_storm_base.png",
+      "attributeIcon": "attr_02_light.png",
+      "rankIcon": "rank_01_bronze.png"
+    },
+    "modelText": {
+      "name": "Elemental Sorcerer",
+      "tagline": "Empireyoncar"
+    },
+    "selectedModelId": "dragon-slayer",
+    "templateId": "inferno",
+    "textStyleId": "legendary",
+    "createdAt": "2026-06-05T21:26:22.489Z",
+    "updatedAt": "2026-06-05T21:26:22.489Z"
+  },
+  {
+    "id": "9fffdda0-d8e7-44a5-8727-1c02d029a587",
+    "name": "Phoenix Guardian",
+    "card": {
+      "name": "",
+      "genre": "Un guardian renacido del fuego estelar que protege el equilibrio del cosmos.",
+      "id": "",
+      "rank": "Bronze",
+      "rarity": "",
+      "country": "",
+      "xp": "0",
+      "level": "0",
+      "strength": "0",
+      "agility": "0",
+      "vitality": "0",
+      "intelligence": "0",
+      "wisdom": "0",
+      "charisma": "0",
+      "attribute": "",
+      "skills": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "assets": {
+      "background": "/local-assets/backgrounds/file/bg-cosmic-galaxy-1080x1920.png",
+      "character": "/local-assets/characters/file/19_phoenix_guardian.png",
+      "frame": "/local-assets/frames/file/border_11_cosmic_galaxy.png",
+      "glow": "/local-assets/glows/file/vfx_11_cosmic_galaxy_base.png",
+      "attributeIcon": "/local-assets/attributes/file/attr_02_light.png",
+      "rankIcon": "/local-assets/ranks/file/rank_01_bronze.png"
+    },
+    "assetNames": {
+      "background": "bg-cosmic-galaxy-1080x1920.png",
+      "character": "19_phoenix_guardian.png",
+      "frame": "border_11_cosmic_galaxy.png",
+      "glow": "vfx_11_cosmic_galaxy_base.png",
+      "attributeIcon": "attr_02_light.png",
+      "rankIcon": "rank_01_bronze.png"
+    },
+    "modelText": {
+      "name": " Phoenix Guardian",
+      "tagline": "Empireyoncar"
+    },
+    "selectedModelId": "dragon-slayer",
+    "templateId": "inferno",
+    "textStyleId": "legendary",
+    "createdAt": "2026-06-05T21:21:56.716Z",
+    "updatedAt": "2026-06-05T21:21:56.716Z"
+  },
+  {
+    "id": "f5836ab5-8dad-43e1-bbcf-550d8569d518",
+    "name": "Beast Tamer",
+    "card": {
+      "name": "",
+      "genre": "Un domador que controla la furia y la nobleza de las bestias del bosque.",
+      "id": "",
+      "rank": "Bronze",
+      "rarity": "",
+      "country": "",
+      "xp": "0",
+      "level": "0",
+      "strength": "0",
+      "agility": "0",
+      "vitality": "0",
+      "intelligence": "0",
+      "wisdom": "0",
+      "charisma": "0",
+      "attribute": "",
+      "skills": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "assets": {
+      "background": "/local-assets/backgrounds/file/bg-emerald-forest-1080x1920.png",
+      "character": "/local-assets/characters/file/beast_tamer_character.png",
+      "frame": "/local-assets/frames/file/marco_10_emerald_forest.png",
+      "glow": "/local-assets/glows/file/vfx_10_emerald_forest_base.png",
+      "attributeIcon": "/local-assets/attributes/file/attr_02_light.png",
+      "rankIcon": "/local-assets/ranks/file/rank_01_bronze.png"
+    },
+    "assetNames": {
+      "background": "bg-emerald-forest-1080x1920.png",
+      "character": "beast_tamer_character.png",
+      "frame": "marco_10_emerald_forest.png",
+      "glow": "vfx_10_emerald_forest_base.png",
+      "attributeIcon": "attr_02_light.png",
+      "rankIcon": "rank_01_bronze.png"
+    },
+    "modelText": {
+      "name": "Beast Tamer",
+      "tagline": "Empireyoncar"
+    },
+    "selectedModelId": "dragon-slayer",
+    "templateId": "inferno",
+    "textStyleId": "legendary",
+    "createdAt": "2026-06-05T21:17:07.793Z",
+    "updatedAt": "2026-06-05T21:17:07.793Z"
+  },
+  {
+    "id": "a3c2e685-8de1-4da7-99da-526fc1f3479d",
+    "name": "Blood Knight",
+    "card": {
+      "name": "",
+      "genre": "Un caballero marcado por la luna carmesi que lucha entre honor y maldicion.",
+      "id": "",
+      "rank": "Bronze",
+      "rarity": "",
+      "country": "",
+      "xp": "0",
+      "level": "0",
+      "strength": "0",
+      "agility": "0",
+      "vitality": "0",
+      "intelligence": "0",
+      "wisdom": "0",
+      "charisma": "0",
+      "attribute": "",
+      "skills": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "assets": {
+      "background": "/local-assets/backgrounds/file/bg-crimson-bloodmoon-1080x1920.png",
+      "character": "/local-assets/characters/file/14_blood_knight.png",
+      "frame": "/local-assets/frames/file/marco_09_crimson_bloodmoon.png",
+      "glow": "/local-assets/glows/file/vfx_09_crimson_bloodmoon_base.png",
+      "attributeIcon": "/local-assets/attributes/file/attr_02_light.png",
+      "rankIcon": "/local-assets/ranks/file/rank_01_bronze.png"
+    },
+    "assetNames": {
+      "background": "bg-crimson-bloodmoon-1080x1920.png",
+      "character": "14_blood_knight.png",
+      "frame": "marco_09_crimson_bloodmoon.png",
+      "glow": "vfx_09_crimson_bloodmoon_base.png",
+      "attributeIcon": "attr_02_light.png",
+      "rankIcon": "rank_01_bronze.png"
+    },
+    "modelText": {
+      "name": " Blood Knight",
+      "tagline": "Empireyoncar"
+    },
+    "selectedModelId": "dragon-slayer",
+    "templateId": "inferno",
+    "textStyleId": "legendary",
+    "createdAt": "2026-06-05T21:13:42.080Z",
+    "updatedAt": "2026-06-05T21:13:42.080Z"
+  },
+  {
+    "id": "5f26119e-28c3-485f-9751-020af638289f",
+    "name": " - Dragon Slayer",
+    "card": {
+      "name": "",
+      "genre": "Un caballero marcado por la luna carmesi que lucha entre honor y maldicion.",
+      "id": "",
+      "rank": "Bronze",
+      "rarity": "",
+      "country": "",
+      "xp": "0",
+      "level": "0",
+      "strength": "0",
+      "agility": "0",
+      "vitality": "0",
+      "intelligence": "0",
+      "wisdom": "0",
+      "charisma": "0",
+      "attribute": "",
+      "skills": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "assets": {
+      "background": "/local-assets/backgrounds/file/bg-crimson-bloodmoon-1080x1920.png",
+      "character": "/local-assets/characters/file/14_blood_knight.png",
+      "frame": "/local-assets/frames/file/marco_09_crimson_bloodmoon.png",
+      "glow": "/local-assets/glows/file/vfx_09_crimson_bloodmoon_base.png",
+      "attributeIcon": "/local-assets/attributes/file/attr_02_light.png",
+      "rankIcon": "/local-assets/ranks/file/rank_01_bronze.png"
+    },
+    "assetNames": {
+      "background": "bg-crimson-bloodmoon-1080x1920.png",
+      "character": "14_blood_knight.png",
+      "frame": "marco_09_crimson_bloodmoon.png",
+      "glow": "vfx_09_crimson_bloodmoon_base.png",
+      "attributeIcon": "attr_02_light.png",
+      "rankIcon": "rank_01_bronze.png"
+    },
+    "modelText": {
+      "name": " Blood Knight",
+      "tagline": "Empireyoncar"
+    },
+    "selectedModelId": "dragon-slayer",
+    "templateId": "inferno",
+    "textStyleId": "legendary",
+    "createdAt": "2026-06-05T21:13:13.798Z",
+    "updatedAt": "2026-06-05T21:13:13.798Z"
+  },
+  {
+    "id": "2e654016-4847-4562-9a7d-fe4ec63b905b",
+    "name": "Arcane Mage",
+    "card": {
+      "name": "",
+      "genre": "Un mago erudito que domina secretos arcanos capaces de alterar la realidad.",
+      "id": "",
+      "rank": "Bronze",
+      "rarity": "",
+      "country": "",
+      "xp": "0",
+      "level": "0",
+      "strength": "0",
+      "agility": "0",
+      "vitality": "0",
+      "intelligence": "0",
+      "wisdom": "0",
+      "charisma": "0",
+      "attribute": "",
+      "skills": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "assets": {
+      "background": "/local-assets/backgrounds/file/bg-arcane-library-1080x1920.png",
+      "character": "/local-assets/characters/file/char-arcane-mage.png",
+      "frame": "/local-assets/frames/file/marco_08_arcane_library.png",
+      "glow": "/local-assets/glows/file/vfx_08_arcane_library_base.png",
+      "attributeIcon": "/local-assets/attributes/file/attr_02_light.png",
+      "rankIcon": "/local-assets/ranks/file/rank_01_bronze.png"
+    },
+    "assetNames": {
+      "background": "bg-arcane-library-1080x1920.png",
+      "character": "char-arcane-mage.png",
+      "frame": "marco_08_arcane_library.png",
+      "glow": "vfx_08_arcane_library_base.png",
+      "attributeIcon": "attr_02_light.png",
+      "rankIcon": "rank_01_bronze.png"
+    },
+    "modelText": {
+      "name": " Arcane Mage",
+      "tagline": "Empireyoncar"
+    },
+    "selectedModelId": "dragon-slayer",
+    "templateId": "inferno",
+    "textStyleId": "legendary",
+    "createdAt": "2026-06-05T21:10:20.190Z",
+    "updatedAt": "2026-06-05T21:10:20.190Z"
+  },
+  {
+    "id": "fb01ce97-851c-4d91-9c15-cf0a4b162f44",
+    "name": "Cyber Ninja",
+    "card": {
+      "name": "",
+      "genre": "Una sombra digital que se mueve entre luces de neon con velocidad imposible.",
+      "id": "",
+      "rank": "Bronze",
+      "rarity": "",
+      "country": "",
+      "xp": "0",
+      "level": "0",
+      "strength": "0",
+      "agility": "0",
+      "vitality": "0",
+      "intelligence": "0",
+      "wisdom": "0",
+      "charisma": "0",
+      "attribute": "",
+      "skills": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "assets": {
+      "background": "/local-assets/backgrounds/file/bg-neon-cyberpunk-1080x1920.png",
+      "character": "/local-assets/characters/file/13_cyber_ninja.png",
+      "frame": "/local-assets/frames/file/border_07_neon_cyberpunk.png",
+      "glow": "/local-assets/glows/file/vfx_07_neon_cyberpunk_base.png",
+      "attributeIcon": "/local-assets/attributes/file/attr_02_light.png",
+      "rankIcon": "/local-assets/ranks/file/rank_01_bronze.png"
+    },
+    "assetNames": {
+      "background": "bg-neon-cyberpunk-1080x1920.png",
+      "character": "13_cyber_ninja.png",
+      "frame": "border_07_neon_cyberpunk.png",
+      "glow": "vfx_07_neon_cyberpunk_base.png",
+      "attributeIcon": "attr_02_light.png",
+      "rankIcon": "rank_01_bronze.png"
+    },
+    "modelText": {
+      "name": "Cyber Ninja",
+      "tagline": "Empireyoncar"
+    },
+    "selectedModelId": "dragon-slayer",
+    "templateId": "inferno",
+    "textStyleId": "legendary",
+    "createdAt": "2026-06-05T21:04:54.805Z",
+    "updatedAt": "2026-06-05T21:04:54.805Z"
+  },
+  {
+    "id": "8276182a-3875-4bf1-a9de-d31525191848",
+    "name": "Celestial Archer",
+    "card": {
+      "name": "",
+      "genre": "Un arquero bendecido por los cielos que dispara con la precision de las estrellas.",
+      "id": "",
+      "rank": "Bronze",
+      "rarity": "",
+      "country": "",
+      "xp": "0",
+      "level": "0",
+      "strength": "0",
+      "agility": "0",
+      "vitality": "0",
+      "intelligence": "0",
+      "wisdom": "0",
+      "charisma": "0",
+      "attribute": "",
+      "skills": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "assets": {
+      "background": "/local-assets/backgrounds/file/bg-celestial-heaven-1080x1920.png",
+      "character": "/local-assets/characters/file/17_celestial_archer.png",
+      "frame": "/local-assets/frames/file/marco_06_celestial_heaven.png",
+      "glow": "/local-assets/glows/file/vfx_06_celestial_heaven_base.png",
+      "attributeIcon": "/local-assets/attributes/file/attr_02_light.png",
+      "rankIcon": "/local-assets/ranks/file/rank_01_bronze.png"
+    },
+    "assetNames": {
+      "background": "bg-celestial-heaven-1080x1920.png",
+      "character": "17_celestial_archer.png",
+      "frame": "marco_06_celestial_heaven.png",
+      "glow": "vfx_06_celestial_heaven_base.png",
+      "attributeIcon": "attr_02_light.png",
+      "rankIcon": "rank_01_bronze.png"
+    },
+    "modelText": {
+      "name": " Celestial Archer",
+      "tagline": "Empireyoncar"
+    },
+    "selectedModelId": "dragon-slayer",
+    "templateId": "inferno",
+    "textStyleId": "legendary",
+    "createdAt": "2026-06-05T21:01:06.475Z",
+    "updatedAt": "2026-06-05T21:01:06.475Z"
+  },
+  {
+    "id": "6470cf30-e8b9-490e-8bf3-69e3644ba9e6",
+    "name": "Frost Witch",
+    "card": {
+      "name": "",
+      "genre": "Un ser del hielo eterno capaz de congelar el destino con un solo gesto.",
+      "id": "",
+      "rank": "Bronze",
+      "rarity": "",
+      "country": "",
+      "xp": "0",
+      "level": "0",
+      "strength": "0",
+      "agility": "0",
+      "vitality": "0",
+      "intelligence": "0",
+      "wisdom": "0",
+      "charisma": "0",
+      "attribute": "",
+      "skills": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "assets": {
+      "background": "/local-assets/backgrounds/file/bg-frozen-kingdom-1080x1920.png",
+      "character": "/local-assets/characters/file/char-frost-witch.png",
+      "frame": "/local-assets/frames/file/marco_05_frozen_kingdom.png",
+      "glow": "/local-assets/glows/file/vfx_05_frozen_kingdom_base.png",
+      "attributeIcon": "/local-assets/attributes/file/attr_02_light.png",
+      "rankIcon": "/local-assets/ranks/file/rank_01_bronze.png"
+    },
+    "assetNames": {
+      "background": "bg-frozen-kingdom-1080x1920.png",
+      "character": "char-frost-witch.png",
+      "frame": "marco_05_frozen_kingdom.png",
+      "glow": "vfx_05_frozen_kingdom_base.png",
+      "attributeIcon": "attr_02_light.png",
+      "rankIcon": "rank_01_bronze.png"
+    },
+    "modelText": {
+      "name": "Frost Witch",
+      "tagline": "Empireyoncar"
+    },
+    "selectedModelId": "dragon-slayer",
+    "templateId": "inferno",
+    "textStyleId": "legendary",
+    "createdAt": "2026-06-05T20:55:25.495Z",
+    "updatedAt": "2026-06-05T20:55:49.475Z"
+  },
+  {
+    "id": "48666161-8d72-464a-be6c-74013aa38afe",
+    "name": "Berserker",
+    "card": {
+      "name": "",
+      "genre": "Un combatiente forjado en fuego volcanico cuya furia puede partir montanas.",
+      "id": "",
+      "rank": "Bronze",
+      "rarity": "",
+      "country": "",
+      "xp": "0",
+      "level": "0",
+      "strength": "0",
+      "agility": "0",
+      "vitality": "0",
+      "intelligence": "0",
+      "wisdom": "0",
+      "charisma": "0",
+      "attribute": "",
+      "skills": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "assets": {
+      "background": "/local-assets/backgrounds/file/bg-infernal-volcano-1080x1920.png",
+      "character": "/local-assets/characters/file/char-berserker.png",
+      "frame": "/local-assets/frames/file/marco_04_infernal_volcano.png",
+      "glow": "/local-assets/glows/file/vfx_09_crimson_bloodmoon_base.png",
+      "attributeIcon": "/local-assets/attributes/file/attr_02_light.png",
+      "rankIcon": "/local-assets/ranks/file/rank_01_bronze.png"
+    },
+    "assetNames": {
+      "background": "bg-infernal-volcano-1080x1920.png",
+      "character": "char-berserker.png",
+      "frame": "marco_04_infernal_volcano.png",
+      "glow": "vfx_09_crimson_bloodmoon_base.png",
+      "attributeIcon": "attr_02_light.png",
+      "rankIcon": "rank_01_bronze.png"
+    },
+    "modelText": {
+      "name": "Berserker",
+      "tagline": "Empireyoncar"
+    },
+    "selectedModelId": "dragon-slayer",
+    "templateId": "inferno",
+    "textStyleId": "legendary",
+    "createdAt": "2026-06-05T20:49:50.986Z",
+    "updatedAt": "2026-06-05T20:49:50.986Z"
+  },
+  {
+    "id": "ffed392b-3ff9-4c22-ae9c-3e55cbe921e0",
+    "name": "Holy Paladin",
+    "card": {
+      "name": "",
+      "genre": "Un paladin consagrado por la luz dorada que purifica toda sombra a su paso.",
+      "id": "",
+      "rank": "Bronze",
+      "rarity": "",
+      "country": "",
+      "xp": "0",
+      "level": "0",
+      "strength": "0",
+      "agility": "0",
+      "vitality": "0",
+      "intelligence": "0",
+      "wisdom": "0",
+      "charisma": "0",
+      "attribute": "",
+      "skills": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "assets": {
+      "background": "/local-assets/backgrounds/file/Dark%20Fantasy%20Gothic%20Medieval%20RPG..png",
+      "character": "/local-assets/characters/file/character-holy-paladin.png",
+      "frame": "/local-assets/frames/file/border_19_royal_empire.png",
+      "glow": "/local-assets/glows/file/vfx_02_golden_divine_base.png",
+      "attributeIcon": "/local-assets/attributes/file/attr_02_light.png",
+      "rankIcon": "/local-assets/ranks/file/rank_01_bronze.png"
+    },
+    "assetNames": {
+      "background": "Dark Fantasy Gothic Medieval RPG..png",
+      "character": "character-holy-paladin.png",
+      "frame": "border_19_royal_empire.png",
+      "glow": "vfx_02_golden_divine_base.png",
+      "attributeIcon": "attr_02_light.png",
+      "rankIcon": "rank_01_bronze.png"
+    },
+    "modelText": {
+      "name": "Holy Paladi",
+      "tagline": "Empireyoncar"
+    },
+    "selectedModelId": "dragon-slayer",
+    "templateId": "inferno",
+    "textStyleId": "legendary",
+    "createdAt": "2026-06-05T20:31:45.687Z",
+    "updatedAt": "2026-06-05T20:31:45.687Z"
+  },
+  {
+    "id": "cf017e65-ecaf-4b2f-982b-9e8bd0bb0a44",
+    "name": "Epic Warrior",
+    "card": {
+      "name": "",
+      "genre": "Un guerrero nacido en la oscuridad que lucha por encender la ultima chispa de esperanza.",
+      "id": "",
+      "rank": "Bronze",
+      "rarity": "",
+      "country": "",
+      "xp": "0",
+      "level": "0",
+      "strength": "0",
+      "agility": "0",
+      "vitality": "0",
+      "intelligence": "0",
+      "wisdom": "0",
+      "charisma": "0",
+      "attribute": "",
+      "skills": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "assets": {
+      "background": "/local-assets/backgrounds/file/Medieval%20Dark.png",
+      "character": "/local-assets/characters/file/char-epic-warrior.png",
+      "frame": "/local-assets/frames/file/border_01_ultra_refined.png",
+      "glow": "/local-assets/glows/file/vfx_warrior_ash_steel.png",
+      "attributeIcon": "/local-assets/attributes/file/attr_02_light.png",
+      "rankIcon": "/local-assets/ranks/file/rank_01_bronze.png"
+    },
+    "assetNames": {
+      "background": "Medieval Dark.png",
+      "character": "char-epic-warrior.png",
+      "frame": "border_01_ultra_refined.png",
+      "glow": "vfx_warrior_ash_steel.png",
+      "attributeIcon": "attr_02_light.png",
+      "rankIcon": "rank_01_bronze.png"
+    },
+    "modelText": {
+      "name": "Epic Warrior",
+      "tagline": "Empireyoncar"
+    },
+    "selectedModelId": "dragon-slayer",
+    "templateId": "inferno",
+    "textStyleId": "legendary",
+    "createdAt": "2026-06-05T20:26:31.981Z",
+    "updatedAt": "2026-06-05T20:26:31.981Z"
+  }
+]

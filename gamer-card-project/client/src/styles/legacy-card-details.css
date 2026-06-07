@@ -1,0 +1,159 @@
+@layer components {
+.card-stats-section {
+    padding: 12px;
+    background: linear-gradient(180deg, rgba(26, 26, 46, 0.9) 0%, rgba(10, 10, 10, 0.95) 100%);
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+
+  .stat-compact {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    animation: statCompactFadeIn 400ms var(--ease-out) backwards;
+  }
+
+  .stat-compact:nth-child(1) { animation-delay: 150ms; }
+  .stat-compact:nth-child(2) { animation-delay: 200ms; }
+  .stat-compact:nth-child(3) { animation-delay: 250ms; }
+  .stat-compact:nth-child(4) { animation-delay: 300ms; }
+  .stat-compact:nth-child(5) { animation-delay: 350ms; }
+  .stat-compact:nth-child(6) { animation-delay: 400ms; }
+  .stat-compact:nth-child(7) { animation-delay: 450ms; }
+  .stat-compact:nth-child(8) { animation-delay: 500ms; }
+
+  .stat-label-compact {
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .stat-value-compact {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    font-family: 'Courier New', monospace;
+  }
+
+  .stat-bar-compact {
+    height: 3px;
+    background: rgba(212, 175, 55, 0.15);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .stat-bar-fill-compact {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold), #ffd700);
+    border-radius: 2px;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+    transition: width 600ms var(--ease-out);
+  }
+
+  /* ABILITIES SECTION */
+  .card-abilities-section {
+    padding: 10px 12px;
+    background: rgba(10, 10, 10, 0.8);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .abilities-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+
+  .abilities-title {
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  .abilities-divider {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+  }
+
+  .abilities-list-compact {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .ability-compact {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    color: #e0e0e0;
+    padding: 4px 6px;
+    background: rgba(212, 175, 55, 0.08);
+    border-left: 2px solid var(--gold);
+    border-radius: 2px;
+    animation: abilityCompactSlideIn 400ms var(--ease-out) backwards;
+  }
+
+  .ability-compact:nth-child(1) { animation-delay: 550ms; }
+  .ability-compact:nth-child(2) { animation-delay: 600ms; }
+  .ability-compact:nth-child(3) { animation-delay: 650ms; }
+
+  .ability-icon {
+    color: var(--gold);
+    font-size: 8px;
+  }
+
+  .ability-text {
+    flex: 1;
+    line-height: 1.2;
+  }
+
+  /* RANGO BADGE */
+  .rango-badge-bottom {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    z-index: 10;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0.05) 100%);
+    border: 1px solid var(--gold);
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
+  }
+
+  /* GLOW EFFECT */
+  .card-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, var(--rarity-glow) 0%, transparent 70%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 300ms var(--ease-out);
+    z-index: 0;
+  }
+
+  .epic-gamer-card:hover .card-glow {
+    opacity: 0.5;
+  }
+}
+

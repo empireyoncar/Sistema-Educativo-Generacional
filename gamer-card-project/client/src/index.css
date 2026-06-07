@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@import "./styles/theme.css";
+@import "./styles/base.css";
+@import "./styles/rpg-core.css";
+@import "./styles/card-effects.css";
+@import "./styles/card-motion.css";
+@import "./styles/card-grid.css";
+@import "./styles/xp-animations.css";
+@import "./styles/stats-animations.css";
+@import "./styles/identity-animations.css";
+@import "./styles/text-styles.css";
+@import "./styles/layout.css";
+@import "./styles/legacy-card-shell.css";
+@import "./styles/legacy-card-details.css";
+@import "./styles/legacy-card-animations.css";

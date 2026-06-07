@@ -1,0 +1,98 @@
+@layer components {
+/* ANIMATIONS */
+  @keyframes cardEntrance {
+    from {
+      opacity: 0;
+      transform: scale(0.95) translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes nameSlideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes metaFadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes statCompactFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes abilityCompactSlideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes badgePulse {
+    0%, 100% {
+      box-shadow: 0 0 20px var(--rarity-glow);
+    }
+    50% {
+      box-shadow: 0 0 30px var(--rarity-glow);
+    }
+  }
+
+  @keyframes starSpin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes shine {
+    0% {
+      left: -100%;
+    }
+    50% {
+      left: 100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .epic-gamer-card,
+    .stat-compact,
+    .card-name,
+    .ability-compact,
+    .rarity-badge,
+    .shine-effect {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
+

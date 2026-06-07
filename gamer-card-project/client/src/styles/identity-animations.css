@@ -1,0 +1,57 @@
+@layer components {
+  .identity-field {
+    opacity: 0;
+    transform: translateY(12px);
+    animation: identityFadeSlide 0.55s ease-out both;
+  }
+
+  .identity-field-nombre { animation-delay: 0.1s; }
+  .identity-field-id { animation-delay: 0.22s; }
+  .identity-field-pais { animation-delay: 0.34s; }
+  .identity-field-rareza { animation-delay: 0.46s; }
+  .identity-field-lore { animation-delay: 0.58s; }
+
+  .rarity-glow-text {
+    color: #ffe6a3;
+    text-shadow:
+      0 0 6px rgba(246, 211, 101, 0.72),
+      0 0 14px rgba(246, 211, 101, 0.42),
+      0 0 24px rgba(180, 83, 9, 0.34);
+    animation: raritySoftGlow 2.8s ease-in-out infinite;
+  }
+
+  .lore-typewriter {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .lore-typewriter span {
+    display: inline-block;
+    overflow: hidden;
+    max-width: 0;
+    white-space: normal;
+    animation: loreTypewriter 1.2s steps(16, end) 0.95s both;
+  }
+
+  @keyframes identityFadeSlide {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes raritySoftGlow {
+    0%, 100% {
+      filter: brightness(1);
+    }
+    50% {
+      filter: brightness(1.28);
+    }
+  }
+
+  @keyframes loreTypewriter {
+    to {
+      max-width: 100%;
+    }
+  }
+}
