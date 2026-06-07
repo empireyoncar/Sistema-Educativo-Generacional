@@ -48,5 +48,5 @@ La ruta `/admin/constructor` carga el constructor visual en un iframe.
 Puedes cambiar la URL con:
 
 ```txt
-VITE_CARD_BUILDER_URL=http://localhost:3000
+VITE_CARD_BUILDER_URL=/empireyoncarsistemaeducativo/constructor-rpg/
 ```

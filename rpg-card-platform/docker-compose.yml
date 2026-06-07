@@ -28,7 +28,7 @@ services:
     restart: unless-stopped
     environment:
       VITE_API_URL: /empireyoncarsistemaeducativo/api
-      VITE_CARD_BUILDER_URL: http://localhost:3000
+      VITE_CARD_BUILDER_URL: /empireyoncarsistemaeducativo/constructor-rpg/
     ports:
       - "3005:5173"
     depends_on:

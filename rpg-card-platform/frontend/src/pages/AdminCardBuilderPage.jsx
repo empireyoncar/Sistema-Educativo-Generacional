@@ -1,6 +1,6 @@
 import { Nav } from "../components/Nav.jsx";
 
-const builderUrl = import.meta.env.VITE_CARD_BUILDER_URL || "http://localhost:3000";
+const builderUrl = import.meta.env.VITE_CARD_BUILDER_URL || "/empireyoncarsistemaeducativo/constructor-rpg/";
 
 export function AdminCardBuilderPage({ navigate }) {
   return (
