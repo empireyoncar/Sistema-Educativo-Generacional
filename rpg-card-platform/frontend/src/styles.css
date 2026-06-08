@@ -77,6 +77,26 @@ input {
   gap: 12px;
 }
 
+.skills-registration-group {
+  display: grid;
+  gap: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.24);
+  padding: 12px;
+}
+
+.skills-registration-group strong {
+  display: block;
+  color: #ffe8a3;
+}
+
+.skills-registration-group p {
+  margin: 4px 0 0;
+  color: rgba(255, 239, 184, 0.68);
+  font-size: 13px;
+}
+
 .nav {
   max-width: 1180px;
   margin: 0 auto 18px;
