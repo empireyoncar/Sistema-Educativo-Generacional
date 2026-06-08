@@ -10,7 +10,21 @@ ASSET_ROOT = Path(os.getenv("RPG_CARD_ASSET_ROOT", "/home/empire/Imágenes/Const
 PUBLIC_BASE = os.getenv("CARD_BUILDER_PUBLIC_BASE", "/empireyoncarsistemaeducativo/constructor-rpg/").rstrip("/") + "/"
 
 ASSET_GROUPS = {
+    "backgrounds": "Fondos tarjetas",
+    "characters": "Personajes",
     "attributes": "Atributos",
+    "ranks": "Rango",
+    "frames": "Marcos",
+    "glows": "Brillo",
+}
+
+ASSET_KEY_GROUPS = {
+    "background": "backgrounds",
+    "character": "characters",
+    "attributeIcon": "attributes",
+    "rankIcon": "ranks",
+    "frame": "frames",
+    "glow": "glows",
 }
 
 ATTRIBUTE_NAMES = [
@@ -62,6 +76,17 @@ def _normalize_url(url: str | None) -> str:
     return url
 
 
+def _is_browser_only_url(url: str | None) -> bool:
+    return not url or url.startswith("blob:") or url.startswith("data:")
+
+
+def _asset_url_from_name(asset_key: str, name: str | None) -> str:
+    group = ASSET_KEY_GROUPS.get(asset_key)
+    if not group or not name:
+        return ""
+    return asset_url(group, name)
+
+
 def load_builder_combinations() -> list[dict]:
     if not COMBINATIONS_FILE.exists():
         return []
@@ -109,7 +134,16 @@ def random_attribute() -> tuple[str, str]:
 
 def build_visual_card_from_combination(combination: dict) -> dict:
     card = combination.get("card") or {}
-    assets = {key: _normalize_url(value) for key, value in (combination.get("assets") or {}).items()}
+    raw_assets = combination.get("assets") or {}
+    asset_names = combination.get("assetNames") or {}
+    assets = {}
+
+    for key in ASSET_KEY_GROUPS:
+        normalized_url = _normalize_url(raw_assets.get(key))
+        if _is_browser_only_url(normalized_url):
+            normalized_url = _asset_url_from_name(key, asset_names.get(key))
+        assets[key] = normalized_url
+
     attribute, attribute_icon = random_attribute()
 
     if attribute_icon:
