@@ -18,6 +18,12 @@ services:
     environment:
       DATABASE_URL: postgresql://rpg_user:rpg_password@db:6800/rpg_cards
       JWT_SECRET: change-this-secret-in-production
+      CARD_BUILDER_COMBINATIONS_FILE: /card-builder-data/combinations.json
+      CARD_BUILDER_PUBLIC_BASE: /empireyoncarsistemaeducativo/constructor-rpg/
+      RPG_CARD_ASSET_ROOT: /home/empire/Imágenes/Constructor de tarjetas RPG
+    volumes:
+      - ./card-builder-data:/card-builder-data:ro
+      - "/home/empire/Imágenes/Constructor de tarjetas RPG:/home/empire/Imágenes/Constructor de tarjetas RPG:ro"
     ports:
       - "6801:6801"
     depends_on:
@@ -43,6 +49,7 @@ services:
       RPG_CARD_ASSET_ROOT: /home/empire/Imágenes/Constructor de tarjetas RPG
       ADMIN_TOKEN: empire-admin
     volumes:
+      - ./card-builder-data:/app/server/data
       - "/home/empire/Imágenes/Constructor de tarjetas RPG:/home/empire/Imágenes/Constructor de tarjetas RPG:ro"
     expose:
       - "3006"

@@ -5,8 +5,10 @@ from datetime import datetime
 
 from fastapi import Depends, FastAPI, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
+from sqlalchemy import text
 from sqlalchemy.orm import Session
 
+from .builder_combinations import build_visual_card_from_combination, load_builder_combinations
 from .database import Base, engine, get_db
 from .models import Card, CardCombination, User
 from .schemas import CardOut, CardUpdate, CombinationIn, CombinationOut, LoginRequest, TokenResponse, UserCreate
@@ -28,9 +30,19 @@ app.add_middleware(
 @app.on_event("startup")
 def startup():
     Base.metadata.create_all(bind=engine)
+    ensure_card_visual_columns()
     db = next(get_db())
     seed_database(db)
     db.close()
+
+
+def ensure_card_visual_columns():
+    with engine.begin() as connection:
+        connection.execute(text("ALTER TABLE cards ALTER COLUMN background TYPE TEXT"))
+        connection.execute(text("ALTER TABLE cards ALTER COLUMN character TYPE TEXT"))
+        connection.execute(text("ALTER TABLE cards ALTER COLUMN frame TYPE TEXT"))
+        connection.execute(text("ALTER TABLE cards ADD COLUMN IF NOT EXISTS visual_assets JSONB DEFAULT '{}'::jsonb"))
+        connection.execute(text("ALTER TABLE cards ADD COLUMN IF NOT EXISTS combination_snapshot JSONB DEFAULT '{}'::jsonb"))
 
 
 @app.post("/api/auth/register", response_model=TokenResponse)
@@ -69,13 +81,30 @@ def generate_my_card(user: User = Depends(get_current_user), db: Session = Depen
     if db.query(Card).filter(Card.user_id == user.id).first():
         raise HTTPException(status_code=409, detail="User already has a card")
 
-    combinations = db.query(CardCombination).all()
-    if not combinations:
+    builder_combinations = load_builder_combinations()
+    db_combinations = db.query(CardCombination).all()
+    if not builder_combinations and not db_combinations:
         raise HTTPException(status_code=400, detail="No card combinations available")
 
-    combination = random.choice(combinations)
-    rarity = random.choice(["Common", "Rare", "Epic", "Legendary"])
-    attribute = random.choice(["Luz", "Sombra", "Fuego", "Hielo", "Arcano", "Naturaleza", "Trueno"])
+    if builder_combinations:
+        visual_card = build_visual_card_from_combination(random.choice(builder_combinations))
+        character_seed = visual_card["character"] or visual_card["name"]
+    else:
+        combination = random.choice(db_combinations)
+        attribute = random.choice(["Luz", "Sombra", "Fuego", "Hielo", "Arcano", "Naturaleza", "Trueno"])
+        visual_card = {
+            "name": combination.character,
+            "rarity": combination.default_rarity or random.choice(["Common", "Rare", "Epic", "Legendary"]),
+            "lore": combination.base_lore,
+            "attribute": attribute,
+            "background": combination.background,
+            "character": combination.character,
+            "frame": combination.frame,
+            "visual_assets": {},
+            "snapshot": {},
+        }
+        character_seed = combination.character
+
     raw_hash = f"{uuid.uuid4()}:{user.id}:{datetime.utcnow().isoformat()}"
     card_hash = hashlib.sha256(raw_hash.encode("utf8")).hexdigest()
 
@@ -84,16 +113,18 @@ def generate_my_card(user: User = Depends(get_current_user), db: Session = Depen
         card_hash=card_hash,
         name=user.name,
         country=user.country,
-        rarity=rarity,
-        lore=combination.base_lore,
+        rarity=visual_card["rarity"],
+        lore=visual_card["lore"],
         experience=0,
         level=1,
-        attribute=attribute,
-        stats=generate_stats(combination.character),
+        attribute=visual_card["attribute"],
+        stats=generate_stats(character_seed),
         skills=user.skills,
-        background=combination.background,
-        character=combination.character,
-        frame=combination.frame,
+        background=visual_card["background"],
+        character=visual_card["character"],
+        frame=visual_card["frame"],
+        visual_assets=visual_card["visual_assets"],
+        combination_snapshot=visual_card["snapshot"],
     )
     db.add(card)
     db.commit()

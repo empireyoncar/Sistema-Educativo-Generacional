@@ -54,6 +54,8 @@ class CardOut(BaseModel):
     background: str
     character: str
     frame: str
+    visual_assets: dict = {}
+    combination_snapshot: dict = {}
     created_at: datetime
     updated_at: datetime
 
@@ -74,3 +76,5 @@ class CardUpdate(BaseModel):
     background: str | None = None
     character: str | None = None
     frame: str | None = None
+    visual_assets: dict | None = None
+    combination_snapshot: dict | None = None
