@@ -69,6 +69,12 @@ export function CombinationsPage({ onBack, onLoadCombination }) {
         )}
 
         {isLoading ? <p className="font-rpg-ui text-white/70">Cargando combinaciones...</p> : null}
+        {!isLoading && combinations.length === 0 && !error ? (
+          <div className="rounded-lg border border-yellow-200/15 bg-black/35 p-5 text-center">
+            <p className="font-rpg-title text-xl text-yellow-100">No hay combinaciones guardadas</p>
+            <p className="mt-2 font-rpg-ui text-white/60">Vuelve al constructor, arma una tarjeta y usa Guardar combinacion en la base de datos.</p>
+          </div>
+        ) : null}
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {combinations.map((item) => (
