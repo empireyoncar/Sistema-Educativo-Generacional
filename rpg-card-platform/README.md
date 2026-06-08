@@ -27,7 +27,7 @@ URLs:
 El backend crea un admin por defecto:
 
 ```txt
-email: admin@rpg.local
+email: admin@empireyoncar.com
 password: admin123
 ```
 

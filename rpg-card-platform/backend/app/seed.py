@@ -32,11 +32,11 @@ def seed_database(db: Session):
         for background, character, lore in COMBINATIONS:
             db.add(CardCombination(background=background, character=character, frame="Ornate Gold", base_lore=lore))
 
-    if not db.query(User).filter(User.email == "admin@rpg.local").first():
+    if not db.query(User).filter(User.email == "admin@empireyoncar.com").first():
         db.add(
             User(
                 name="Admin",
-                email="admin@rpg.local",
+                email="admin@empireyoncar.com",
                 password_hash=hash_password("admin123"),
                 country="Empire",
                 skills=["Gestion", "Cartas"],
