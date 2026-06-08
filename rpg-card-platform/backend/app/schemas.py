@@ -63,24 +63,6 @@ class CardOut(BaseModel):
         from_attributes = True
 
 
-class CardDraft(BaseModel):
-    name: str
-    country: str
-    rarity: str
-    lore: str
-    experience: int = 0
-    level: int = 1
-    attribute: str
-    stats: dict
-    skills: list[str]
-    background: str
-    character: str
-    frame: str
-    visual_assets: dict = {}
-    combination_snapshot: dict = {}
-    card_hash: str = "PREVIEW"
-
-
 class CardUpdate(BaseModel):
     name: str | None = None
     country: str | None = None

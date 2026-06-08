@@ -11,7 +11,7 @@ from sqlalchemy.orm import Session
 from .builder_combinations import build_visual_card_from_combination, load_builder_combinations
 from .database import Base, engine, get_db
 from .models import Card, CardCombination, User
-from .schemas import CardDraft, CardOut, CardUpdate, CombinationIn, CombinationOut, LoginRequest, TokenResponse, UserCreate
+from .schemas import CardOut, CardUpdate, CombinationIn, CombinationOut, LoginRequest, TokenResponse, UserCreate
 from .security import create_access_token, get_current_user, hash_password, require_admin, verify_password
 from .seed import seed_database
 from .stats_generator import generate_stats
@@ -76,7 +76,7 @@ def get_my_card(user: User = Depends(get_current_user), db: Session = Depends(ge
     return db.query(Card).filter(Card.user_id == user.id).first()
 
 
-def build_card_draft_for_user(user: User, db: Session) -> dict:
+def build_card_for_user(user: User, db: Session) -> Card:
     builder_combinations = load_builder_combinations()
     db_combinations = db.query(CardCombination).all()
     if not builder_combinations and not db_combinations:
@@ -101,64 +101,27 @@ def build_card_draft_for_user(user: User, db: Session) -> dict:
         }
         character_seed = combination.character
 
-    return {
-        "name": user.name,
-        "country": user.country,
-        "rarity": visual_card["rarity"],
-        "lore": visual_card["lore"],
-        "experience": 0,
-        "level": 1,
-        "attribute": visual_card["attribute"],
-        "stats": generate_stats(character_seed),
-        "skills": user.skills,
-        "background": visual_card["background"],
-        "character": visual_card["character"],
-        "frame": visual_card["frame"],
-        "visual_assets": visual_card["visual_assets"],
-        "combination_snapshot": visual_card["snapshot"],
-    }
-
-
-def create_card_from_draft(user: User, draft: CardDraft) -> Card:
     raw_hash = f"{uuid.uuid4()}:{user.id}:{datetime.utcnow().isoformat()}"
     card_hash = hashlib.sha256(raw_hash.encode("utf8")).hexdigest()
 
-    return Card(
+    card = Card(
         user_id=user.id,
         card_hash=card_hash,
         name=user.name,
         country=user.country,
-        rarity=draft.rarity,
-        lore=draft.lore,
-        experience=draft.experience,
-        level=draft.level,
-        attribute=draft.attribute,
-        stats=draft.stats,
+        rarity=visual_card["rarity"],
+        lore=visual_card["lore"],
+        experience=0,
+        level=1,
+        attribute=visual_card["attribute"],
+        stats=generate_stats(character_seed),
         skills=user.skills,
-        background=draft.background,
-        character=draft.character,
-        frame=draft.frame,
-        visual_assets=draft.visual_assets,
-        combination_snapshot=draft.combination_snapshot,
+        background=visual_card["background"],
+        character=visual_card["character"],
+        frame=visual_card["frame"],
+        visual_assets=visual_card["visual_assets"],
+        combination_snapshot=visual_card["snapshot"],
     )
-
-
-@app.post("/api/card/preview", response_model=CardDraft)
-def preview_my_card(user: User = Depends(get_current_user), db: Session = Depends(get_db)):
-    return build_card_draft_for_user(user, db)
-
-
-@app.post("/api/card/claim", response_model=CardOut)
-def claim_my_card(payload: CardDraft, user: User = Depends(get_current_user), db: Session = Depends(get_db)):
-    existing_card = db.query(Card).filter(Card.user_id == user.id).first()
-    if existing_card:
-        db.delete(existing_card)
-        db.flush()
-
-    card = create_card_from_draft(user, payload)
-    db.add(card)
-    db.commit()
-    db.refresh(card)
     return card
 
 
@@ -167,7 +130,7 @@ def generate_my_card(user: User = Depends(get_current_user), db: Session = Depen
     if db.query(Card).filter(Card.user_id == user.id).first():
         raise HTTPException(status_code=409, detail="User already has a card")
 
-    card = create_card_from_draft(user, CardDraft(**build_card_draft_for_user(user, db)))
+    card = build_card_for_user(user, db)
     db.add(card)
     db.commit()
     db.refresh(card)
@@ -181,7 +144,7 @@ def regenerate_my_card(user: User = Depends(get_current_user), db: Session = Dep
         db.delete(existing_card)
         db.flush()
 
-    card = create_card_from_draft(user, CardDraft(**build_card_draft_for_user(user, db)))
+    card = build_card_for_user(user, db)
     db.add(card)
     db.commit()
     db.refresh(card)

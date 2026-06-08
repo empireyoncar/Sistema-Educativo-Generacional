@@ -61,8 +61,6 @@ export const authApi = {
 
 export const cardApi = {
   me: () => api("/api/card/me"),
-  preview: () => api("/api/card/preview", { method: "POST" }),
-  claim: (payload) => api("/api/card/claim", { method: "POST", body: JSON.stringify(payload) }),
   generate: () => api("/api/card/generate", { method: "POST" }),
   regenerate: () => api("/api/card/regenerate", { method: "POST" }),
 };
