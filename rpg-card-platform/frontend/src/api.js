@@ -5,6 +5,21 @@ export function getToken() {
   return localStorage.getItem(TOKEN_KEY);
 }
 
+export function getTokenPayload() {
+  const token = getToken();
+  if (!token) return null;
+
+  try {
+    return JSON.parse(atob(token.split(".")[1].replace(/-/g, "+").replace(/_/g, "/")));
+  } catch {
+    return null;
+  }
+}
+
+export function isAdmin() {
+  return getTokenPayload()?.role === "admin";
+}
+
 export function setToken(token) {
   localStorage.setItem(TOKEN_KEY, token);
 }
