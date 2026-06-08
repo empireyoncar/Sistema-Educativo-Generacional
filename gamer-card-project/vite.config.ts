@@ -71,7 +71,7 @@ function localAssetPlugin(): Plugin {
   return {
     name: "local-rpg-card-assets",
     configureServer(server) {
-      server.middlewares.use("/api/combinations", async (req, res) => {
+      const serveCombinations = async (req: import("node:http").IncomingMessage, res: import("node:http").ServerResponse) => {
         if (req.headers["x-admin-token"] !== adminToken) {
           sendJson(res, 401, { error: "Admin token required" });
           return;
@@ -130,7 +130,10 @@ function localAssetPlugin(): Plugin {
         }
 
         sendJson(res, 404, { error: "Unknown combinations route" });
-      });
+      };
+
+      server.middlewares.use("/api/combinations", serveCombinations);
+      server.middlewares.use(`${viteBasePath}api/combinations`, serveCombinations);
 
       const serveLocalAssets = (req: import("node:http").IncomingMessage, res: import("node:http").ServerResponse) => {
         const requestUrl = new URL(req.url ?? "/", "http://localhost");

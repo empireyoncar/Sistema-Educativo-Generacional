@@ -8,8 +8,10 @@ export function setAdminToken(token) {
   localStorage.setItem(adminTokenStorageKey, token);
 }
 
+const combinationsApiBase = `${import.meta.env.BASE_URL}api/combinations`;
+
 async function requestCombinationApi(path = "", options = {}) {
-  const response = await fetch(`/api/combinations${path}`, {
+  const response = await fetch(`${combinationsApiBase}${path}`, {
     ...options,
     headers: {
       "Content-Type": "application/json",
