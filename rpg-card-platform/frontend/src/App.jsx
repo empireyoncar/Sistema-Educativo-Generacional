@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { AdminCardsPage } from "./pages/AdminCardsPage.jsx";
 import { AdminCardBuilderPage } from "./pages/AdminCardBuilderPage.jsx";
+import { AdminBuilderCombinationsPage } from "./pages/AdminBuilderCombinationsPage.jsx";
 import { AdminCombinationsPage } from "./pages/AdminCombinationsPage.jsx";
 import { CommunityCardPage } from "./pages/CommunityCardPage.jsx";
 import { HomePage } from "./pages/HomePage.jsx";
@@ -46,6 +47,7 @@ export function App() {
 
   if (route === "/comunidad-tarjeta") return <CommunityCardPage navigate={navigate} />;
   if (userIsAdmin && route === "/admin/constructor") return <AdminCardBuilderPage navigate={navigate} />;
+  if (userIsAdmin && route === "/admin/combinaciones-constructor") return <AdminBuilderCombinationsPage navigate={navigate} />;
   if (userIsAdmin && route === "/admin/combinaciones") return <AdminCombinationsPage navigate={navigate} />;
   if (userIsAdmin && route === "/admin/cartas") return <AdminCardsPage navigate={navigate} />;
   return <HomePage navigate={navigate} />;

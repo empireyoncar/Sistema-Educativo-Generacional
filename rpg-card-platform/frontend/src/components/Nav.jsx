@@ -8,6 +8,7 @@ export function Nav({ navigate }) {
       <button onClick={() => navigate("/home")}>Home</button>
       <button onClick={() => navigate("/comunidad-tarjeta")}>Comunidad Tarjeta</button>
       {userIsAdmin && <button onClick={() => navigate("/admin/constructor")}>Constructor RPG</button>}
+      {userIsAdmin && <button onClick={() => navigate("/admin/combinaciones-constructor")}>Combinaciones Constructor</button>}
       {userIsAdmin && <button onClick={() => navigate("/admin/combinaciones")}>Admin Combinaciones</button>}
       {userIsAdmin && <button onClick={() => navigate("/admin/cartas")}>Admin Cartas</button>}
       <button

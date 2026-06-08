@@ -84,6 +84,7 @@ export const adminApi = {
   createCombination: (payload) => api("/api/admin/combinations", { method: "POST", body: JSON.stringify(payload) }),
   updateCombination: (id, payload) => api(`/api/admin/combinations/${id}`, { method: "PUT", body: JSON.stringify(payload) }),
   deleteCombination: (id) => api(`/api/admin/combinations/${id}`, { method: "DELETE" }),
+  listBuilderCombinations: () => api("/api/admin/builder-combinations"),
   listCards: () => api("/api/admin/cards"),
   getCard: (id) => api(`/api/admin/cards/${id}`),
   updateCard: (id, payload) => api(`/api/admin/cards/${id}`, { method: "PUT", body: JSON.stringify(payload) }),

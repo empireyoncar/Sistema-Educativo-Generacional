@@ -134,6 +134,7 @@ def random_attribute() -> tuple[str, str]:
 
 def build_visual_card_from_combination(combination: dict) -> dict:
     card = combination.get("card") or {}
+    model_text = combination.get("modelText") or {}
     raw_assets = combination.get("assets") or {}
     asset_names = combination.get("assetNames") or {}
     assets = {}
@@ -152,7 +153,7 @@ def build_visual_card_from_combination(combination: dict) -> dict:
     return {
         "name": card.get("name") or "",
         "rarity": card.get("rarity") or "Bronze",
-        "lore": card.get("lore") or card.get("genre") or "",
+        "lore": card.get("lore") or card.get("genre") or card.get("concept") or card.get("description") or model_text.get("tagline") or "",
         "attribute": attribute,
         "background": assets.get("background", ""),
         "character": assets.get("character", ""),

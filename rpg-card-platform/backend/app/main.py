@@ -6,6 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import text
 from sqlalchemy.orm import Session
 
+from .builder_combinations import build_visual_card_from_combination, load_builder_combinations
 from .copycard import copiar_tarjeta_desde_constructor, eliminar_tarjeta_asignada
 from .database import Base, engine, get_db
 from .models import Card, CardCombination, User
@@ -95,6 +96,23 @@ def generate_my_card(user: User = Depends(get_current_user), db: Session = Depen
 @app.get("/api/admin/combinations", response_model=list[CombinationOut])
 def list_combinations(_admin: User = Depends(require_admin), db: Session = Depends(get_db)):
     return db.query(CardCombination).order_by(CardCombination.id.desc()).all()
+
+
+@app.get("/api/admin/builder-combinations")
+def list_builder_combinations(_admin: User = Depends(require_admin)):
+    combinations = load_builder_combinations()
+    return [
+        {
+            "id": item.get("id") or "",
+            "name": item.get("name") or "Combinacion sin nombre",
+            "updatedAt": item.get("updatedAt") or item.get("createdAt") or "",
+            "card": item.get("card") or {},
+            "assetNames": item.get("assetNames") or {},
+            "modelText": item.get("modelText") or {},
+            "visual": build_visual_card_from_combination(item),
+        }
+        for item in combinations
+    ]
 
 
 @app.post("/api/admin/combinations", response_model=CombinationOut)

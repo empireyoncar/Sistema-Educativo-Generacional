@@ -120,6 +120,10 @@ input {
   color: #fecaca;
 }
 
+.muted-text {
+  color: rgba(255, 239, 184, 0.68);
+}
+
 .rpg-card {
   position: relative;
   width: min(520px, 100%);
@@ -550,13 +554,13 @@ input {
   text-overflow: ellipsis;
   white-space: nowrap;
   font-family: Georgia, serif;
-  font-size: 16px;
+  font-size: 13px;
   line-height: 1;
   color: #fff7d1;
 }
 
 .identity-highlight {
-  font-size: 17px !important;
+  font-size: 13px !important;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -569,8 +573,8 @@ input {
 .identity-lore-text {
   display: block !important;
   white-space: normal !important;
-  font-size: 12px !important;
-  line-height: 1.15 !important;
+  font-size: 11px !important;
+  line-height: 1.1 !important;
 }
 
 .ornament-line {
@@ -857,6 +861,70 @@ input {
   text-align: center;
   text-transform: uppercase;
   text-shadow: 0 0 8px rgba(246, 211, 101, 0.72);
+}
+
+.builder-combination-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.builder-combination-card {
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.36);
+  padding: 14px;
+}
+
+.builder-combination-card h2 {
+  margin: 12px 0 6px;
+  color: #ffe8a3;
+}
+
+.builder-combination-card p {
+  color: rgba(255, 239, 184, 0.72);
+  line-height: 1.35;
+}
+
+.builder-combination-card dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 6px 10px;
+  margin: 12px 0 0;
+}
+
+.builder-combination-card dt {
+  color: rgba(255, 239, 184, 0.6);
+}
+
+.builder-combination-card dd {
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #fff7d1;
+}
+
+.builder-preview-strip {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.builder-preview-strip span {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.42);
+}
+
+.builder-preview-strip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .rarity-glow-text {
