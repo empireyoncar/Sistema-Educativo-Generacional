@@ -10,6 +10,22 @@ export function setAdminToken(token) {
 
 const combinationsApiBase = `${import.meta.env.BASE_URL}api/combinations`;
 
+function normalizeAssetUrl(url) {
+  if (typeof url !== "string") return url;
+  if (url.startsWith("/local-assets/")) return `${import.meta.env.BASE_URL}${url.slice(1)}`;
+  if (url.startsWith("local-assets/")) return `${import.meta.env.BASE_URL}${url}`;
+  return url;
+}
+
+function normalizeCombination(combination) {
+  if (!combination?.assets) return combination;
+
+  return {
+    ...combination,
+    assets: Object.fromEntries(Object.entries(combination.assets).map(([key, value]) => [key, normalizeAssetUrl(value)])),
+  };
+}
+
 async function requestCombinationApi(path = "", options = {}) {
   const response = await fetch(`${combinationsApiBase}${path}`, {
     ...options,
@@ -25,7 +41,8 @@ async function requestCombinationApi(path = "", options = {}) {
   }
 
   if (response.status === 204) return null;
-  return response.json();
+  const data = await response.json();
+  return Array.isArray(data) ? data.map(normalizeCombination) : normalizeCombination(data);
 }
 
 export function listCombinations() {

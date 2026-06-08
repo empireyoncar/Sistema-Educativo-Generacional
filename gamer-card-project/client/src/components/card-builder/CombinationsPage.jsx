@@ -112,6 +112,11 @@ function PreviewStrip({ item }) {
 
   return (
     <div className="mt-4 grid grid-cols-6 gap-2">
+      {assets.length === 0 ? (
+        <div className="col-span-6 rounded border border-white/10 bg-black/40 px-3 py-4 text-center font-rpg-ui text-sm text-white/55">
+          Sin imagenes guardadas
+        </div>
+      ) : null}
       {assets.map((src) => (
         <div key={src} className="h-16 overflow-hidden rounded border border-white/10 bg-black/40">
           <img src={src} alt="" className="h-full w-full object-cover" />
