@@ -9,6 +9,44 @@ const statConfig = [
   ["carisma", "Carisma", Sparkles],
 ];
 
+const countryFlags = {
+  argentina: "🇦🇷",
+  bolivia: "🇧🇴",
+  brasil: "🇧🇷",
+  brazil: "🇧🇷",
+  canada: "🇨🇦",
+  chile: "🇨🇱",
+  colombia: "🇨🇴",
+  cuba: "🇨🇺",
+  dominicana: "🇩🇴",
+  ecuador: "🇪🇨",
+  espana: "🇪🇸",
+  españa: "🇪🇸",
+  guatemala: "🇬🇹",
+  honduras: "🇭🇳",
+  mexico: "🇲🇽",
+  méxico: "🇲🇽",
+  nicaragua: "🇳🇮",
+  panama: "🇵🇦",
+  panamá: "🇵🇦",
+  paraguay: "🇵🇾",
+  peru: "🇵🇪",
+  perú: "🇵🇪",
+  "puerto rico": "🇵🇷",
+  salvador: "🇸🇻",
+  "el salvador": "🇸🇻",
+  usa: "🇺🇸",
+  "estados unidos": "🇺🇸",
+  "united states": "🇺🇸",
+  uruguay: "🇺🇾",
+  venezuela: "🇻🇪",
+};
+
+function getCountryFlag(country = "") {
+  const normalized = country.trim().toLowerCase();
+  return countryFlags[normalized] || countryFlags[normalized.normalize("NFD").replace(/[\u0300-\u036f]/g, "")] || "";
+}
+
 export function RpgCard({ card }) {
   if (!card) return null;
 
@@ -52,7 +90,7 @@ export function RpgCard({ card }) {
           <div className="ornament-line" />
           <Field label="Nombre" value={card.name} highlight />
           <Field label="ID" value={String(card.card_hash || "").slice(0, 12)} />
-          <Field label="Pais" value={card.country || ""} flag />
+          <Field label="Pais" value={card.country || ""} flag={getCountryFlag(card.country)} />
           <Field label="Rareza" value={card.rarity || ""} glow />
           <Field label="Lore" value={card.lore || ""} longText />
           <div className="ornament-line" />
@@ -108,12 +146,12 @@ export function RpgCard({ card }) {
   );
 }
 
-function Field({ label, value, highlight = false, flag = false, glow = false, longText = false }) {
+function Field({ label, value, highlight = false, flag = "", glow = false, longText = false }) {
   return (
     <div className={`identity-field ${longText ? "identity-field-lore" : ""}`}>
       <span>{label}</span>
       <strong className={`${highlight ? "identity-highlight" : ""} ${glow ? "rarity-glow-text" : ""} ${longText ? "identity-lore-text" : ""}`}>
-        {flag && <i className="country-flag" />}
+        {flag && <i className="country-flag">{flag}</i>}
         {value || "-"}
       </strong>
     </div>
