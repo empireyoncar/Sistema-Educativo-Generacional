@@ -95,16 +95,17 @@ input {
 
 .rpg-card {
   position: relative;
-  max-width: 520px;
-  min-height: 760px;
-  margin-top: 20px;
-  border: 2px solid #d4af37;
-  border-radius: 18px;
+  width: min(520px, 100%);
+  aspect-ratio: 9 / 16;
+  margin: 20px auto 0;
+  border: 0;
+  border-radius: 10px;
   overflow: hidden;
   background:
     radial-gradient(circle at 50% 10%, rgba(212, 175, 55, 0.18), transparent 38%),
     rgba(0, 0, 0, 0.72);
-  padding: 24px;
+  padding: clamp(18px, 4vw, 30px);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.72), 0 0 38px rgba(212, 175, 55, 0.18);
 }
 
 .community-card-bg,
@@ -131,9 +132,9 @@ input {
 }
 
 .community-card-character {
-  inset: 12% 8% auto;
-  width: 84%;
-  height: 48%;
+  inset: 13% 5% auto;
+  width: 90%;
+  height: 52%;
   object-fit: contain;
   filter: drop-shadow(0 0 28px rgba(255, 220, 120, 0.78));
   z-index: 2;
@@ -141,17 +142,17 @@ input {
 
 .community-card-frame {
   object-fit: fill;
-  z-index: 6;
+  z-index: 8;
 }
 
 .community-card-content {
   position: relative;
-  z-index: 4;
+  z-index: 7;
   display: grid;
-  gap: 14px;
-  min-height: 712px;
+  gap: 10px;
+  height: 100%;
   align-content: end;
-  padding-top: 42%;
+  padding-top: 46%;
   text-shadow: 0 2px 10px #000;
 }
 
@@ -163,11 +164,30 @@ input {
   background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.72) 28%, rgba(0, 0, 0, 0.88));
 }
 
+.community-card-title {
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  transform: translateX(-50%);
+  width: 72%;
+  text-align: center;
+  font-family: Georgia, serif;
+  font-size: clamp(14px, 3vw, 20px);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: #fff0b8;
+  text-shadow: 0 0 14px rgba(246, 211, 101, 0.9), 0 2px 10px #000;
+}
+
 .rpg-card header h2 {
   margin: 6px 0;
   font-family: Georgia, serif;
-  font-size: 34px;
+  font-size: clamp(26px, 6vw, 38px);
   color: #ffe8a3;
+}
+
+.rpg-card header {
+  max-width: 66%;
 }
 
 .card-rank {
@@ -189,15 +209,17 @@ input {
 }
 
 .lore {
-  margin: 18px 0;
+  margin: 4px 0 8px;
+  max-width: 72%;
   color: #f5dfae;
-  line-height: 1.45;
+  font-size: 14px;
+  line-height: 1.35;
 }
 
 .meta-grid,
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
 }
 

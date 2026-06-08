@@ -19,6 +19,7 @@ export function RpgCard({ card }) {
       {frame && <img src={frame} alt="" className="community-card-frame" />}
 
       <div className="community-card-content">
+        <div className="community-card-title">EMPIREYONCAR</div>
         <div className="card-rank">
           {rankIcon && <img src={rankIcon} alt="" />}
           <span>{card.rarity}</span>
@@ -33,7 +34,6 @@ export function RpgCard({ card }) {
         <section className="lore">{card.lore}</section>
 
         <section className="meta-grid">
-          <span>Hash</span><strong>{card.card_hash?.slice(0, 16)}...</strong>
           <span>Nivel</span><strong>{card.level}</strong>
           <span>XP</span><strong>{card.experience}</strong>
           <span>Atributo</span>
