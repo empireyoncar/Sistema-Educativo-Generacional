@@ -25,7 +25,7 @@ class TokenResponse(BaseModel):
 class UserOut(BaseModel):
     id: UUID
     name: str
-    email: EmailStr
+    email: str
     country: str = ""
     skills: list[str] = []
     role: str
@@ -37,7 +37,7 @@ class UserOut(BaseModel):
 
 class UserUpdate(BaseModel):
     name: str | None = None
-    email: EmailStr | None = None
+    email: str | None = None
     country: str | None = None
     skills: list[str] | None = None
     role: str | None = None
