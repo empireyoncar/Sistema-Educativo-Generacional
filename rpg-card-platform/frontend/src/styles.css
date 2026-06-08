@@ -568,6 +568,7 @@ select option {
   min-width: 0;
   align-items: center;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 2px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -579,9 +580,17 @@ select option {
 }
 
 .identity-highlight {
-  font-size: 11px !important;
+  font-size: 10px !important;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+}
+
+.identity-highlight span {
+  flex: 0 0 100%;
+}
+
+.identity-field-compact {
+  min-height: 34px;
 }
 
 .identity-field-lore {
@@ -613,6 +622,29 @@ select option {
   line-height: 1;
   background: rgba(0, 0, 0, 0.28);
 }
+
+.flag-venezuela { background: linear-gradient(180deg, #facc15 0 33%, #2563eb 33% 66%, #dc2626 66%); }
+.flag-colombia { background: linear-gradient(180deg, #facc15 0 50%, #2563eb 50% 75%, #dc2626 75%); }
+.flag-mexico { background: linear-gradient(90deg, #15803d 0 33%, #f8fafc 33% 66%, #b91c1c 66%); }
+.flag-espana { background: linear-gradient(180deg, #b91c1c 0 25%, #facc15 25% 75%, #b91c1c 75%); }
+.flag-usa { background: repeating-linear-gradient(180deg, #b91c1c 0 2px, #f8fafc 2px 4px); }
+.flag-argentina { background: linear-gradient(180deg, #7dd3fc 0 33%, #f8fafc 33% 66%, #7dd3fc 66%); }
+.flag-chile { background: linear-gradient(180deg, #f8fafc 0 50%, #dc2626 50%); }
+.flag-peru { background: linear-gradient(90deg, #dc2626 0 33%, #f8fafc 33% 66%, #dc2626 66%); }
+.flag-ecuador { background: linear-gradient(180deg, #facc15 0 50%, #2563eb 50% 75%, #dc2626 75%); }
+.flag-brasil { background: #16a34a; }
+.flag-panama { background: linear-gradient(90deg, #f8fafc 0 50%, #dc2626 50%); }
+.flag-uruguay { background: repeating-linear-gradient(180deg, #f8fafc 0 2px, #60a5fa 2px 4px); }
+.flag-paraguay { background: linear-gradient(180deg, #dc2626 0 33%, #f8fafc 33% 66%, #2563eb 66%); }
+.flag-bolivia { background: linear-gradient(180deg, #dc2626 0 33%, #facc15 33% 66%, #15803d 66%); }
+.flag-cuba { background: repeating-linear-gradient(180deg, #2563eb 0 3px, #f8fafc 3px 6px); }
+.flag-puerto-rico { background: repeating-linear-gradient(180deg, #dc2626 0 3px, #f8fafc 3px 6px); }
+.flag-dominicana { background: linear-gradient(90deg, #2563eb 0 50%, #dc2626 50%); }
+.flag-guatemala { background: linear-gradient(90deg, #60a5fa 0 33%, #f8fafc 33% 66%, #60a5fa 66%); }
+.flag-honduras { background: linear-gradient(180deg, #60a5fa 0 33%, #f8fafc 33% 66%, #60a5fa 66%); }
+.flag-nicaragua { background: linear-gradient(180deg, #2563eb 0 33%, #f8fafc 33% 66%, #2563eb 66%); }
+.flag-salvador { background: linear-gradient(180deg, #2563eb 0 33%, #f8fafc 33% 66%, #2563eb 66%); }
+.flag-canada { background: linear-gradient(90deg, #dc2626 0 25%, #f8fafc 25% 75%, #dc2626 75%); }
 
 .card-zone-xp {
   grid-column: 1 / 4;

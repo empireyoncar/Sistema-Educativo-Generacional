@@ -9,42 +9,48 @@ const statConfig = [
   ["carisma", "Carisma", Sparkles],
 ];
 
-const countryFlags = {
-  argentina: "🇦🇷",
-  bolivia: "🇧🇴",
-  brasil: "🇧🇷",
-  brazil: "🇧🇷",
-  canada: "🇨🇦",
-  chile: "🇨🇱",
-  colombia: "🇨🇴",
-  cuba: "🇨🇺",
-  dominicana: "🇩🇴",
-  ecuador: "🇪🇨",
-  espana: "🇪🇸",
-  españa: "🇪🇸",
-  guatemala: "🇬🇹",
-  honduras: "🇭🇳",
-  mexico: "🇲🇽",
-  méxico: "🇲🇽",
-  nicaragua: "🇳🇮",
-  panama: "🇵🇦",
-  panamá: "🇵🇦",
-  paraguay: "🇵🇾",
-  peru: "🇵🇪",
-  perú: "🇵🇪",
-  "puerto rico": "🇵🇷",
-  salvador: "🇸🇻",
-  "el salvador": "🇸🇻",
-  usa: "🇺🇸",
-  "estados unidos": "🇺🇸",
-  "united states": "🇺🇸",
-  uruguay: "🇺🇾",
-  venezuela: "🇻🇪",
+const countryFlagClasses = {
+  argentina: "flag-argentina",
+  bolivia: "flag-bolivia",
+  brasil: "flag-brasil",
+  brazil: "flag-brasil",
+  canada: "flag-canada",
+  chile: "flag-chile",
+  colombia: "flag-colombia",
+  cuba: "flag-cuba",
+  dominicana: "flag-dominicana",
+  ecuador: "flag-ecuador",
+  espana: "flag-espana",
+  guatemala: "flag-guatemala",
+  honduras: "flag-honduras",
+  mexico: "flag-mexico",
+  nicaragua: "flag-nicaragua",
+  panama: "flag-panama",
+  paraguay: "flag-paraguay",
+  peru: "flag-peru",
+  "puerto rico": "flag-puerto-rico",
+  salvador: "flag-salvador",
+  "el salvador": "flag-salvador",
+  usa: "flag-usa",
+  "estados unidos": "flag-usa",
+  "united states": "flag-usa",
+  uruguay: "flag-uruguay",
+  venezuela: "flag-venezuela",
 };
 
+function normalizeText(value = "") {
+  return value.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
 function getCountryFlag(country = "") {
-  const normalized = country.trim().toLowerCase();
-  return countryFlags[normalized] || countryFlags[normalized.normalize("NFD").replace(/[\u0300-\u036f]/g, "")] || "";
+  return countryFlagClasses[normalizeText(country)] || "";
+}
+
+function splitDisplayName(name = "") {
+  const parts = name.trim().split(/\s+/).filter(Boolean);
+  if (parts.length <= 2) return [name || "-"];
+  const midpoint = Math.ceil(parts.length / 2);
+  return [parts.slice(0, midpoint).join(" "), parts.slice(midpoint).join(" ")];
 }
 
 export function RpgCard({ card }) {
@@ -69,7 +75,6 @@ export function RpgCard({ card }) {
       <span className="rpg-corner-mark top-right" />
       <span className="rpg-corner-mark bottom-left" />
       <span className="rpg-corner-mark bottom-right" />
-
       {background && <img src={background} alt="" className="community-card-bg" />}
       <div className="community-card-vignette" />
       <div className="community-card-aura" />
@@ -88,34 +93,24 @@ export function RpgCard({ card }) {
 
         <section className="card-zone-identity">
           <div className="ornament-line" />
-          <Field label="Nombre" value={card.name} highlight />
-          <Field label="ID" value={String(card.card_hash || "").slice(0, 12)} />
-          <Field label="Pais" value={card.country || ""} flag={getCountryFlag(card.country)} />
-          <Field label="Rareza" value={card.rarity || ""} glow />
+          <Field label="Nombre" value={splitDisplayName(card.name)} highlight />
+          <Field label="ID" value={String(card.card_hash || "").slice(0, 12)} compact />
+          <Field label="Pais" value={card.country || ""} flag={getCountryFlag(card.country)} compact />
+          <Field label="Rareza" value={card.rarity || ""} glow compact />
           <Field label="Lore" value={card.lore || ""} longText />
           <div className="ornament-line" />
         </section>
 
         <section className="card-zone-xp">
-          <div className="xp-header">
-            <span>Experiencia</span>
-            <strong>{xp}</strong>
-          </div>
-          <div className="xp-bar" style={{ "--xp": `${xpPercent}%` }}>
-            <span />
-          </div>
-          <div className="xp-meta">
-            <span>Nivel {card.level || 1}</span>
-          </div>
+          <div className="xp-header"><span>Experiencia</span><strong>{xp}</strong></div>
+          <div className="xp-bar" style={{ "--xp": `${xpPercent}%` }}><span /></div>
+          <div className="xp-meta"><span>Nivel {card.level || 1}</span></div>
         </section>
 
         <section className="card-zone-attribute">
           <div className="attribute-orb">
             {attributeIcon && <img src={attributeIcon} alt="" />}
-            <div className="attribute-orb-label">
-              <p>Atributo</p>
-              <strong>{card.attribute || ""}</strong>
-            </div>
+            <div className="attribute-orb-label"><p>Atributo</p><strong>{card.attribute || ""}</strong></div>
           </div>
         </section>
 
@@ -128,9 +123,7 @@ export function RpgCard({ card }) {
 
         <section className="card-zone-stats">
           <h2>Estadisticas</h2>
-          {statConfig.map(([key, label, Icon]) => (
-            <MiniStat key={key} label={label} value={stats[key] ?? 0} Icon={Icon} />
-          ))}
+          {statConfig.map(([key, label, Icon]) => <MiniStat key={key} label={label} value={stats[key] ?? 0} Icon={Icon} />)}
         </section>
 
         <section className="card-zone-skills">
@@ -146,13 +139,14 @@ export function RpgCard({ card }) {
   );
 }
 
-function Field({ label, value, highlight = false, flag = "", glow = false, longText = false }) {
+function Field({ label, value, highlight = false, flag = "", glow = false, longText = false, compact = false }) {
+  const values = Array.isArray(value) ? value : [value || "-"];
   return (
-    <div className={`identity-field ${longText ? "identity-field-lore" : ""}`}>
+    <div className={`identity-field ${longText ? "identity-field-lore" : ""} ${compact ? "identity-field-compact" : ""}`}>
       <span>{label}</span>
       <strong className={`${highlight ? "identity-highlight" : ""} ${glow ? "rarity-glow-text" : ""} ${longText ? "identity-lore-text" : ""}`}>
-        {flag && <i className="country-flag">{flag}</i>}
-        {value || "-"}
+        {flag && <i className={`country-flag ${flag}`} />}
+        {values.map((item, index) => <span key={`${item}-${index}`}>{item || "-"}</span>)}
       </strong>
     </div>
   );
@@ -160,19 +154,11 @@ function Field({ label, value, highlight = false, flag = "", glow = false, longT
 
 function MiniStat({ label, value, Icon }) {
   const statValue = Math.max(0, Math.min(100, Number(value) || 0));
-
   return (
     <div className="rpg-stat" style={{ "--stat-percent": `${Math.max(8, statValue)}%` }}>
-      <p>
-        <span className="stat-icon-frame">
-          <Icon aria-hidden="true" />
-        </span>
-        <span>{label}</span>
-      </p>
+      <p><span className="stat-icon-frame"><Icon aria-hidden="true" /></span><span>{label}</span></p>
       <strong>{statValue}</strong>
-      <div className="stat-power-bar">
-        <span />
-      </div>
+      <div className="stat-power-bar"><span /></div>
     </div>
   );
 }

@@ -2,14 +2,20 @@ import { useState } from "react";
 import { authApi, setToken } from "../api.js";
 
 export function RegisterPage({ navigate }) {
-  const [form, setForm] = useState({ name: "", email: "", password: "", country: "", skills: ["", "", "", ""] });
+  const [form, setForm] = useState({ firstName: "", lastName: "", email: "", password: "", country: "", skills: ["", "", "", ""] });
   const [error, setError] = useState("");
 
   async function submit(event) {
     event.preventDefault();
     setError("");
     try {
-      const result = await authApi.register({ ...form, skills: form.skills.map((item) => item.trim()).filter(Boolean) });
+      const result = await authApi.register({
+        name: `${form.firstName.trim()} ${form.lastName.trim()}`.trim(),
+        email: form.email,
+        password: form.password,
+        country: form.country,
+        skills: form.skills.map((item) => item.trim()).filter(Boolean),
+      });
       setToken(result.access_token);
       navigate("/home");
     } catch (err) {
@@ -21,7 +27,9 @@ export function RegisterPage({ navigate }) {
     <main className="auth-page">
       <form className="panel auth-form" onSubmit={submit}>
         <h1>Registro</h1>
-        {["name", "email", "password", "country"].map((field) => (
+        <input placeholder="Nombre" value={form.firstName} onChange={(event) => setForm({ ...form, firstName: event.target.value })} />
+        <input placeholder="Apellido" value={form.lastName} onChange={(event) => setForm({ ...form, lastName: event.target.value })} />
+        {["email", "password", "country"].map((field) => (
           <input key={field} type={field === "password" ? "password" : "text"} placeholder={field} value={form[field]} onChange={(event) => setForm({ ...form, [field]: event.target.value })} />
         ))}
         <div className="skills-registration-group">
