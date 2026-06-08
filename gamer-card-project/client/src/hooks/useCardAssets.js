@@ -11,6 +11,7 @@ const localLibraries = [
 ];
 
 export function useCardAssets() {
+  const localAssetsBase = `${import.meta.env.BASE_URL}local-assets`;
   const [assets, setAssets] = useState(emptyAssets);
   const [assetNames, setAssetNames] = useState(emptyAssets);
   const [libraries, setLibraries] = useState({
@@ -30,7 +31,7 @@ export function useCardAssets() {
 
   async function loadLocalLibrary(group, libraryKey, assetKey) {
     try {
-      const response = await fetch(`/local-assets/${group}/list`);
+      const response = await fetch(`${localAssetsBase}/${group}/list`);
       if (!response.ok) return;
       const files = await response.json();
 

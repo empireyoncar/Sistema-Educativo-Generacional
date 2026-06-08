@@ -42,6 +42,8 @@ services:
       VITE_BASE_PATH: /empireyoncarsistemaeducativo/constructor-rpg/
       RPG_CARD_ASSET_ROOT: /home/empire/Imágenes/Constructor de tarjetas RPG
       ADMIN_TOKEN: empire-admin
+    volumes:
+      - "/home/empire/Imágenes/Constructor de tarjetas RPG:/home/empire/Imágenes/Constructor de tarjetas RPG:ro"
     expose:
       - "3006"
 

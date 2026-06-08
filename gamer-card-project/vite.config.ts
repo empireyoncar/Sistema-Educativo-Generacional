@@ -11,6 +11,8 @@ const defaultLocalAssetRoot =
     ? "C:\\Users\\empir\\OneDrive\\Pictures\\Constructor de tarjetas RPG"
     : "/home/empire/Imágenes/Constructor de tarjetas RPG";
 const localAssetRoot = process.env.RPG_CARD_ASSET_ROOT || defaultLocalAssetRoot;
+const viteBasePath = (process.env.VITE_BASE_PATH || "/").replace(/\/?$/, "/");
+const localAssetsPublicBase = `${viteBasePath}local-assets`.replace(/\/$/, "");
 
 const localAssetFolders = {
   backgrounds: path.join(localAssetRoot, "Fondos tarjetas"),
@@ -130,7 +132,7 @@ function localAssetPlugin(): Plugin {
         sendJson(res, 404, { error: "Unknown combinations route" });
       });
 
-      server.middlewares.use("/local-assets", (req, res) => {
+      const serveLocalAssets = (req: import("node:http").IncomingMessage, res: import("node:http").ServerResponse) => {
         const requestUrl = new URL(req.url ?? "/", "http://localhost");
         const parts = requestUrl.pathname.split("/").filter(Boolean);
         const group = parts[0] as keyof typeof localAssetFolders | undefined;
@@ -146,7 +148,7 @@ function localAssetPlugin(): Plugin {
           const files = listImages(folder).map((name) => ({
             name,
             path: path.join(folder, name),
-            url: `/local-assets/${group}/file/${encodeURIComponent(name)}`,
+            url: `${localAssetsPublicBase}/${group}/file/${encodeURIComponent(name)}`,
           }));
 
           res.writeHead(200, { "Content-Type": "application/json" });
@@ -175,7 +177,10 @@ function localAssetPlugin(): Plugin {
 
         res.writeHead(404);
         res.end();
-      });
+      };
+
+      server.middlewares.use("/local-assets", serveLocalAssets);
+      server.middlewares.use(`${viteBasePath}local-assets`, serveLocalAssets);
     },
   };
 }
