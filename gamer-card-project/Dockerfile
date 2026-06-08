@@ -10,4 +10,4 @@ RUN pnpm install --frozen-lockfile
 
 COPY . .
 
-CMD ["pnpm", "dev", "--", "--port", "3006"]
+CMD ["pnpm", "exec", "vite", "--host", "0.0.0.0", "--port", "3006"]
