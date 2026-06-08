@@ -28,16 +28,6 @@ export function CommunityCardPage({ navigate }) {
     }
   }
 
-  async function regenerate() {
-    if (!window.confirm("Reemplazar esta tarjeta por una combinacion guardada en el constructor?")) return;
-    setError("");
-    try {
-      setCard(await cardApi.regenerate());
-    } catch (err) {
-      setError(err.message);
-    }
-  }
-
   useEffect(() => {
     loadCard();
   }, []);
@@ -50,12 +40,7 @@ export function CommunityCardPage({ navigate }) {
         {loading && <p>Cargando...</p>}
         {error && <p className="error">{error}</p>}
         {!loading && !card && <button onClick={generate}>Crear tarjeta</button>}
-        {card && (
-          <>
-            <button onClick={regenerate}>Reemplazar con combinacion del constructor</button>
-            <RpgCard card={card} />
-          </>
-        )}
+        {card && <RpgCard card={card} />}
       </section>
     </main>
   );
