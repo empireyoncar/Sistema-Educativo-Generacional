@@ -6,7 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import text
 from sqlalchemy.orm import Session
 
-from .copycard import copiar_tarjeta_desde_constructor
+from .copycard import copiar_tarjeta_desde_constructor, eliminar_tarjeta_asignada
 from .database import Base, engine, get_db
 from .models import Card, CardCombination, User
 from .schemas import CardOut, CardUpdate, CombinationIn, CombinationOut, LoginRequest, TokenResponse, UserCreate
@@ -81,7 +81,7 @@ def generate_my_card(user: User = Depends(get_current_user), db: Session = Depen
     if db.query(Card).filter(Card.user_id == user.id).first():
         raise HTTPException(status_code=409, detail="User already has a card")
 
-    copied_card = copiar_tarjeta_desde_constructor()
+    copied_card = copiar_tarjeta_desde_constructor(user.id)
     if not copied_card:
         raise HTTPException(status_code=400, detail="No card builder combinations available")
 
@@ -156,5 +156,6 @@ def update_card(card_id: uuid.UUID, payload: CardUpdate, _admin: User = Depends(
 def delete_card(card_id: uuid.UUID, _admin: User = Depends(require_admin), db: Session = Depends(get_db)):
     card = db.get(Card, card_id)
     if card:
+        eliminar_tarjeta_asignada(card.user_id)
         db.delete(card)
         db.commit()
