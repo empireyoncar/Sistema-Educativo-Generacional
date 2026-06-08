@@ -89,6 +89,13 @@ input {
   background: transparent;
 }
 
+.danger-button {
+  margin-top: 12px;
+  border-color: rgba(248, 113, 113, 0.55);
+  background: rgba(127, 29, 29, 0.36);
+  color: #fecaca;
+}
+
 .error {
   color: #fecaca;
 }

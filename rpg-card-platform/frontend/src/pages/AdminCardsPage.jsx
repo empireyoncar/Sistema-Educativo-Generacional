@@ -22,6 +22,20 @@ export function AdminCardsPage({ navigate }) {
     setCards(cards.map((card) => (card.id === updated.id ? updated : card)));
   }
 
+  async function deleteSelectedCard() {
+    if (!selected) return;
+    if (!window.confirm(`Eliminar la tarjeta de ${selected.name}? El usuario podra crear una nueva.`)) return;
+
+    try {
+      await adminApi.deleteCard(selected.id);
+      setCards(cards.filter((card) => card.id !== selected.id));
+      setSelected(null);
+      setError("");
+    } catch (err) {
+      setError(err.message);
+    }
+  }
+
   useEffect(() => {
     load();
   }, []);
@@ -49,6 +63,9 @@ export function AdminCardsPage({ navigate }) {
                     <input key={key} placeholder={key} value={selected[key] || ""} onChange={(event) => updateField(key, event.target.value)} />
                   ))}
                 </div>
+                <button className="danger-button" onClick={deleteSelectedCard}>
+                  Eliminar tarjeta
+                </button>
               </>
             )}
           </div>

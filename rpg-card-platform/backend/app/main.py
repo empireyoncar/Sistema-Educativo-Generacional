@@ -150,3 +150,11 @@ def update_card(card_id: uuid.UUID, payload: CardUpdate, _admin: User = Depends(
     db.commit()
     db.refresh(card)
     return card
+
+
+@app.delete("/api/admin/cards/{card_id}", status_code=204)
+def delete_card(card_id: uuid.UUID, _admin: User = Depends(require_admin), db: Session = Depends(get_db)):
+    card = db.get(Card, card_id)
+    if card:
+        db.delete(card)
+        db.commit()

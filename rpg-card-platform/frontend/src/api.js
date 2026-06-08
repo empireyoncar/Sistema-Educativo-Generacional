@@ -72,4 +72,5 @@ export const adminApi = {
   listCards: () => api("/api/admin/cards"),
   getCard: (id) => api(`/api/admin/cards/${id}`),
   updateCard: (id, payload) => api(`/api/admin/cards/${id}`, { method: "PUT", body: JSON.stringify(payload) }),
+  deleteCard: (id) => api(`/api/admin/cards/${id}`, { method: "DELETE" }),
 };
