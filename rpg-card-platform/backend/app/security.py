@@ -15,11 +15,11 @@ bearer_scheme = HTTPBearer()
 
 
 def hash_password(password: str) -> str:
-    return password_context.hash(password)
+    return password_context.hash(password[:72])
 
 
 def verify_password(password: str, password_hash: str) -> bool:
-    return password_context.verify(password, password_hash)
+    return password_context.verify(password[:72], password_hash)
 
 
 def create_access_token(user: User) -> str:
