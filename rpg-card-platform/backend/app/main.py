@@ -76,11 +76,7 @@ def get_my_card(user: User = Depends(get_current_user), db: Session = Depends(ge
     return db.query(Card).filter(Card.user_id == user.id).first()
 
 
-@app.post("/api/card/generate", response_model=CardOut)
-def generate_my_card(user: User = Depends(get_current_user), db: Session = Depends(get_db)):
-    if db.query(Card).filter(Card.user_id == user.id).first():
-        raise HTTPException(status_code=409, detail="User already has a card")
-
+def build_card_for_user(user: User, db: Session) -> Card:
     builder_combinations = load_builder_combinations()
     db_combinations = db.query(CardCombination).all()
     if not builder_combinations and not db_combinations:
@@ -126,6 +122,29 @@ def generate_my_card(user: User = Depends(get_current_user), db: Session = Depen
         visual_assets=visual_card["visual_assets"],
         combination_snapshot=visual_card["snapshot"],
     )
+    return card
+
+
+@app.post("/api/card/generate", response_model=CardOut)
+def generate_my_card(user: User = Depends(get_current_user), db: Session = Depends(get_db)):
+    if db.query(Card).filter(Card.user_id == user.id).first():
+        raise HTTPException(status_code=409, detail="User already has a card")
+
+    card = build_card_for_user(user, db)
+    db.add(card)
+    db.commit()
+    db.refresh(card)
+    return card
+
+
+@app.post("/api/card/regenerate", response_model=CardOut)
+def regenerate_my_card(user: User = Depends(get_current_user), db: Session = Depends(get_db)):
+    existing_card = db.query(Card).filter(Card.user_id == user.id).first()
+    if existing_card:
+        db.delete(existing_card)
+        db.flush()
+
+    card = build_card_for_user(user, db)
     db.add(card)
     db.commit()
     db.refresh(card)

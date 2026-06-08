@@ -62,6 +62,7 @@ export const authApi = {
 export const cardApi = {
   me: () => api("/api/card/me"),
   generate: () => api("/api/card/generate", { method: "POST" }),
+  regenerate: () => api("/api/card/regenerate", { method: "POST" }),
 };
 
 export const adminApi = {
