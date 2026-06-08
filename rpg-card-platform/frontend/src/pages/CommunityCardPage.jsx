@@ -5,6 +5,7 @@ import { RpgCard } from "../components/RpgCard.jsx";
 
 export function CommunityCardPage({ navigate }) {
   const [card, setCard] = useState(null);
+  const [preview, setPreview] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -19,20 +20,21 @@ export function CommunityCardPage({ navigate }) {
     }
   }
 
-  async function generate() {
+  async function generatePreview() {
     setError("");
     try {
-      setCard(await cardApi.generate());
+      setPreview(await cardApi.preview());
     } catch (err) {
       setError(err.message);
     }
   }
 
-  async function regenerate() {
-    if (!window.confirm("Reemplazar esta tarjeta por una combinacion guardada en el constructor?")) return;
+  async function savePreview() {
+    if (!preview) return;
     setError("");
     try {
-      setCard(await cardApi.regenerate());
+      setCard(await cardApi.claim(preview));
+      setPreview(null);
     } catch (err) {
       setError(err.message);
     }
@@ -49,10 +51,19 @@ export function CommunityCardPage({ navigate }) {
         <h1>Comunidad Tarjeta</h1>
         {loading && <p>Cargando...</p>}
         {error && <p className="error">{error}</p>}
-        {!loading && !card && <button onClick={generate}>Crear tarjeta</button>}
-        {card && (
+        {!loading && !card && !preview && <button onClick={generatePreview}>Generar vista previa</button>}
+        {preview && (
           <>
-            <button onClick={regenerate}>Reemplazar con combinacion del constructor</button>
+            <div className="card-actions">
+              <button onClick={savePreview}>Guardar esta tarjeta</button>
+              <button className="ghost" onClick={generatePreview}>Elegir otra combinacion</button>
+            </div>
+            <RpgCard card={preview} />
+          </>
+        )}
+        {card && !preview && (
+          <>
+            <button onClick={generatePreview}>Generar nueva vista previa</button>
             <RpgCard card={card} />
           </>
         )}
