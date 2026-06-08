@@ -7,6 +7,7 @@ export default defineConfig({
   server: {
     host: "0.0.0.0",
     port: 3005,
+    allowedHosts: ["empireyoncar.duckdns.org"],
     proxy: {
       "/empireyoncarsistemaeducativo/api": {
         target: "http://backend:6801",
