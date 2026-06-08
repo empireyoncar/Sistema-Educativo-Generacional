@@ -11,6 +11,7 @@ export function Nav({ navigate }) {
       {userIsAdmin && <button onClick={() => navigate("/admin/combinaciones-constructor")}>Combinaciones Constructor</button>}
       {userIsAdmin && <button onClick={() => navigate("/admin/combinaciones")}>Admin Combinaciones</button>}
       {userIsAdmin && <button onClick={() => navigate("/admin/cartas")}>Admin Cartas</button>}
+      {userIsAdmin && <button onClick={() => navigate("/admin/usuarios")}>Admin Usuarios</button>}
       <button
         onClick={() => {
           logout();

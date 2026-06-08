@@ -3,6 +3,7 @@ import { AdminCardsPage } from "./pages/AdminCardsPage.jsx";
 import { AdminCardBuilderPage } from "./pages/AdminCardBuilderPage.jsx";
 import { AdminBuilderCombinationsPage } from "./pages/AdminBuilderCombinationsPage.jsx";
 import { AdminCombinationsPage } from "./pages/AdminCombinationsPage.jsx";
+import { AdminUsersPage } from "./pages/AdminUsersPage.jsx";
 import { CommunityCardPage } from "./pages/CommunityCardPage.jsx";
 import { HomePage } from "./pages/HomePage.jsx";
 import { LoginPage } from "./pages/LoginPage.jsx";
@@ -50,5 +51,6 @@ export function App() {
   if (userIsAdmin && route === "/admin/combinaciones-constructor") return <AdminBuilderCombinationsPage navigate={navigate} />;
   if (userIsAdmin && route === "/admin/combinaciones") return <AdminCombinationsPage navigate={navigate} />;
   if (userIsAdmin && route === "/admin/cartas") return <AdminCardsPage navigate={navigate} />;
+  if (userIsAdmin && route === "/admin/usuarios") return <AdminUsersPage navigate={navigate} />;
   return <HomePage navigate={navigate} />;
 }

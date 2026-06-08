@@ -10,7 +10,7 @@ from .builder_combinations import build_visual_card_from_combination, load_build
 from .copycard import copiar_tarjeta_desde_constructor, eliminar_tarjeta_asignada
 from .database import Base, engine, get_db
 from .models import Card, CardCombination, User
-from .schemas import CardOut, CardUpdate, CombinationIn, CombinationOut, LoginRequest, TokenResponse, UserCreate
+from .schemas import CardOut, CardUpdate, CombinationIn, CombinationOut, LoginRequest, TokenResponse, UserCreate, UserOut, UserUpdate
 from .security import create_access_token, get_current_user, hash_password, require_admin, verify_password
 from .seed import seed_database
 from .fullcard import rellenar_tarjeta_con_usuario
@@ -113,6 +113,48 @@ def list_builder_combinations(_admin: User = Depends(require_admin)):
         }
         for item in combinations
     ]
+
+
+@app.get("/api/admin/users", response_model=list[UserOut])
+def list_users(_admin: User = Depends(require_admin), db: Session = Depends(get_db)):
+    return db.query(User).order_by(User.created_at.desc()).all()
+
+
+@app.put("/api/admin/users/{user_id}", response_model=UserOut)
+def update_user(user_id: uuid.UUID, payload: UserUpdate, _admin: User = Depends(require_admin), db: Session = Depends(get_db)):
+    user = db.get(User, user_id)
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    data = payload.model_dump(exclude_unset=True)
+    password = data.pop("password", None)
+    if password:
+        user.password_hash = hash_password(password)
+
+    if data.get("role") and data["role"] not in ["user", "admin"]:
+        raise HTTPException(status_code=400, detail="Invalid role")
+
+    for key, value in data.items():
+        setattr(user, key, value)
+
+    db.commit()
+    db.refresh(user)
+    return user
+
+
+@app.delete("/api/admin/users/{user_id}", status_code=204)
+def delete_user(user_id: uuid.UUID, _admin: User = Depends(require_admin), db: Session = Depends(get_db)):
+    user = db.get(User, user_id)
+    if not user:
+        return
+
+    card = db.query(Card).filter(Card.user_id == user.id).first()
+    if card:
+        eliminar_tarjeta_asignada(card.user_id)
+        db.delete(card)
+
+    db.delete(user)
+    db.commit()
 
 
 @app.post("/api/admin/combinations", response_model=CombinationOut)

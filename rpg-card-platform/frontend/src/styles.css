@@ -13,7 +13,8 @@ body {
 }
 
 button,
-input {
+input,
+select {
   font: inherit;
 }
 
@@ -38,13 +39,19 @@ button {
   text-decoration: none;
 }
 
-input {
+input,
+select {
   width: 100%;
   border: 1px solid rgba(212, 175, 55, 0.25);
   border-radius: 8px;
   background: rgba(0, 0, 0, 0.45);
   color: #fff;
   padding: 11px 12px;
+}
+
+select option {
+  background: #111018;
+  color: #fff;
 }
 
 .page,
@@ -323,6 +330,17 @@ input {
   display: grid;
   grid-template-columns: minmax(220px, 360px) 1fr;
   gap: 18px;
+}
+
+.admin-user-editor {
+  display: grid;
+  gap: 10px;
+}
+
+.admin-user-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .builder-header {

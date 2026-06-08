@@ -22,6 +22,28 @@ class TokenResponse(BaseModel):
     token_type: str = "bearer"
 
 
+class UserOut(BaseModel):
+    id: UUID
+    name: str
+    email: EmailStr
+    country: str = ""
+    skills: list[str] = []
+    role: str
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+
+class UserUpdate(BaseModel):
+    name: str | None = None
+    email: EmailStr | None = None
+    country: str | None = None
+    skills: list[str] | None = None
+    role: str | None = None
+    password: str | None = None
+
+
 class CombinationIn(BaseModel):
     background: str
     character: str
