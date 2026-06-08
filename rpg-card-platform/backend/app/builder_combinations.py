@@ -28,6 +28,29 @@ ATTRIBUTE_NAMES = [
     "Abismo",
 ]
 
+ATTRIBUTE_FILE_NAMES = {
+    "attr_02_light.png": "Light",
+    "attr_03_fire.png": "Fire",
+    "attr_04_ice.png": "Ice",
+    "attr_05_thunder.png": "Thunder",
+    "attr_06_blood.png": "Blood",
+    "attr_07_poison.png": "Poison",
+    "attr_08_arcane.png": "Arcane",
+    "attr_09_cosmic.png": "Cosmic",
+    "attr_10_time.png": "Time",
+    "attr_11_gravity.png": "Gravity",
+    "attr_12_spirit.png": "Spirit",
+    "attr_13_dragon.png": "Dragon",
+    "attr_14_shadow_flame.png": "Shadow Flame",
+    "attr_15_holy_energy.png": "Holy Energy",
+    "attr_16_chaos.png": "Chaos",
+    "attr_17_void.png": "Void",
+    "attr_18_wind.png": "Wind",
+    "attr_19_earth.png": "Earth",
+    "attr_20_phoenix_soul.png": "Phoenix Soul",
+    "attribute_darkness.png": "Darkness",
+}
+
 
 def _normalize_url(url: str | None) -> str:
     if not url:
@@ -73,6 +96,10 @@ def random_attribute() -> tuple[str, str]:
     selected_file = random.choice(files) if files else ""
 
     if selected_file:
+        mapped_name = ATTRIBUTE_FILE_NAMES.get(selected_file)
+        if mapped_name:
+            return mapped_name, asset_url("attributes", selected_file)
+
         clean_name = Path(selected_file).stem.replace("-", " ").replace("_", " ").strip()
         attribute = clean_name.title() if clean_name else random.choice(ATTRIBUTE_NAMES)
         return attribute, asset_url("attributes", selected_file)
